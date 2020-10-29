@@ -15,6 +15,11 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('login_id', 'Login ID(String > 8)') !!}
+                    {!! Form::text('login_id', old('login_id'), ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('password', 'Password') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>

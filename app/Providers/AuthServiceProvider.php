@@ -25,6 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::resource('announcements', 'App\Policies\AnnouncementPolicy');
+        Gate::define('announcements.read', 'App\Policies\AnnouncementPolicy@read');
     }
 }
