@@ -12,16 +12,22 @@
             <ul class="navbar-nav">
                 @if (Auth::check())
                     {{-- ユーザ一覧ページへのリンク --}}
-                    <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
                     <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tattoos</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            {{-- ユーザ詳細ページへのリンク --}}
+                            <li class="dropdown-item"><a href="#">{!! link_to_route('tattoos.index', 'Edit') !!}</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('tattoos.create', 'Upload Tattoo', [], []) !!}</li>
+                        </ul>
+                    </li>
+                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             {{-- ユーザ詳細ページへのリンク --}}
                             <li class="dropdown-item"><a href="#">{!! link_to_route('users.index', 'All Artist') !!}</a></li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item"><a href="#">{!! link_to_route('users.show', 'My profile', ['user' => Auth::user()->id]) !!}</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li class="dropdown-item">{!! link_to_route('signup.get', 'Create User', [], []) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('users.create', 'Create User', [], []) !!}</li>
                             <li class="dropdown-divider"></li>
 
                             {{-- ログアウトへのリンク --}}

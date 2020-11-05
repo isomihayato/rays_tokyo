@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-@include('commons.error_message')
+@include('commons.error_messages')
 
-<h1>メッセージ新規作成ページ</h1>
+<h1>ユーザ新規作成</h1>
 
 <div class="row">
     <div class="col-6">

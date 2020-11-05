@@ -29,3 +29,7 @@ Route::group(['middleware' => ['auth'],['middleware' => ['responsible_auth']]], 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
+
+Route::resource('tattoos','TattoosController',['only' => [
+  'index', 'create', 'update', 'store', 'destroy',
+  ]]);
