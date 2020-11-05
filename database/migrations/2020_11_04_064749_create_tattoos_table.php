@@ -15,9 +15,12 @@ class CreateTattoosTable extends Migration
     {
         Schema::create('tattoos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_max_number');
-            $table->text('images');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('order');
+            $table->text('path');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -15,10 +15,7 @@ class TattoosController extends Controller
       $tattoos = Tattoo::whereBetween('created_at',[
         (new DateTime('first day of this month'))->format('Y-m-d'),
         (new Datetime('last day of this month'))->format('Y-m-d'),
-      ]);
-
-      if($tattoos->exists()) $tattoos = json_decode(($tattoos->get())[0]['images']);
-
+      ])->orderBy('order', 'asc')->get();
       return view('tattoos.index',[
         'tattoos' => $tattoos,
       ]);
@@ -48,30 +45,67 @@ class TattoosController extends Controller
             (new DateTime($request->insert_at))->modify('last day of this month')->format('Y-m-d'),
         ]);
 
-        $order = ($tattoos->exists() ? $tattoos->get()[0]['order_max_number'] : 1);
+        $order = is_null($tattoos->max('order')) ? 1 : $tattoos->max('order')+1;
 
-        $rows = ($tattoos->exists()  ? json_decode($tattoos->get()[0]->images) : []);
         foreach($request->images as $image)
         {
           $path = str_replace('public/', '', $image->store('public'));
 
-          $rows[] = ['order'=>$order,'path'=>$path,'artist'=>$request->artist];
+          $tattoo = User::findOrFail($request->artist)->tattoos()->create([
+              'order' => $order,
+              'path'  => $path,
+          ]);
 
           $order +=1;
         }
-        $tattoos->exists() ? ($tattoo = $tattoos->get()[0]) : ($tattoo = new Tattoo);
-
-        $tattoo->order_max_number = $order;
-        $tattoo->images = json_encode($rows);
-        $tattoo->save();
-        
-        return view('tattoos.index',[
-          'tattoos' => json_decode($tattoo->images),
-        ]);
+        return redirect('tattoos');
     }
 
-    public function destroy()
+    public function arrange(Request $request)
     {
+        $errors = [];
+        $request->validate([
+            'tattoo_id'=> 'required',
+            'arrange'  => 'required',
+        ]);
+        $vertical = $request->arrange;
+        $tattoo  = Tattoo::findOrFail($request->tattoo_id);
+        switch ($vertical) {
+          case 'up':
+            $upper_tattoo = Tattoo::where('order',intval($tattoo->order)-1);
+            if ($upper_tattoo->exists()) {
+              $upper_tattoo = $upper_tattoo->get()[0];
+            }else{
+              break;
+            }
+            $upper_tattoo->order = $tattoo->order;
+            $tattoo->order -= 1;
+            $upper_tattoo->save();
+            $tattoo->save();
+            break;
+          case 'down':
+            $lower_tattoo = Tattoo::where('order',intval($tattoo->order)+1);
+            if ($lower_tattoo->exists()) {
+              $lower_tattoo = $lower_tattoo->get()[0];
+            }else{
+              break;
+            }
+            $lower_tattoo->order = $tattoo->order;
+            $tattoo->order +=1;
+            $lower_tattoo->save();
+            $tattoo->save();
+            break;
+          default:
+            // code...
+            break;
+        }
+        return redirect('tattoos');
+    }
 
+    public function destroy($id)
+    {
+        $tattoo = Tattoo::findOrFail($id);
+        $tattoo->delete();
+        return redirect('tattoos');
     }
 }

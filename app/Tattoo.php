@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Tattoo extends Model
 {
   protected $fillable = [
-    'images'
+    'order','path'
   ];
+
+  public function user()
+  {
+      return $this->belongsTo(User::class);
+  }
 }
