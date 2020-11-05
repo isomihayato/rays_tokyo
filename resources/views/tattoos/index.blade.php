@@ -2,9 +2,15 @@
 
 @section('content')
 
-<table class="table text-center">
+{!! Form::open(['route' => 'tattoos.index']) !!}
+{!! Form::label('current', 'Show Current') !!}
+{!! Form::month('current',$current) !!}
+{!! Form::submit('Show') !!}
+{!! Form::close() !!}
+<table class="table text-center mt-5">
     <thead>
         <th>Order</th>
+        <th>Artist</th>
         <th>Tattoo</th>
         <th>Delete</th>
     </thead>
@@ -23,8 +29,9 @@
             {!! Form::button('<i class="fas fa-arrow-down"></i>',['class' => "btn", 'type' => 'submit']) !!}
             {!! Form::close() !!}
           </td>
+          <td style="vertical-align:middle;">{{ $tattoo->user->name }}</td>
           <td>
-            <img src="/storage/{{ $tattoo->path }}" width="200">
+            <img src="/storage/{{ $tattoo->path }}" width="200" height="200">
           </td>
           <td style="vertical-align:middle;">
             {!! Form::open(['route'=>['tattoos.destroy',$tattoo->id],'method'=>'delete']) !!}

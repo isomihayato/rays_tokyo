@@ -33,4 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
 Route::resource('tattoos','TattoosController',['only' => [
   'index', 'create', 'update', 'store', 'destroy',
   ]]);
+Route::post('tattoos/index','TattoosController@index')->name('tattoos.index');
+Route::get('tattoos/index','TattoosController@index')->name('tattoos.index');
 Route::post('tattoos/arrange','TattoosController@arrange')->name('tattoos.arrange');

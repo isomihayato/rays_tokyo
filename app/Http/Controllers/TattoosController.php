@@ -10,14 +10,19 @@ use DateTime;
 
 class TattoosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+      // eval(\Psy\sh());
+      $current = is_null($request->current) ? now() : new DateTime($request->current);
+
       $tattoos = Tattoo::whereBetween('created_at',[
-        (new DateTime('first day of this month'))->format('Y-m-d'),
-        (new Datetime('last day of this month'))->format('Y-m-d'),
+        $current->modify("first day of this month")->format('Y-m-d'),
+        $current->modify("last day of this month")->format('Y-m-d'),
       ])->orderBy('order', 'asc')->get();
+
       return view('tattoos.index',[
         'tattoos' => $tattoos,
+        'current' => $current,
       ]);
     }
 
@@ -55,6 +60,8 @@ class TattoosController extends Controller
               'order' => $order,
               'path'  => $path,
           ]);
+          $tattoo->created_at = new DateTime($request->insert_at);
+          $tattoo->save();
 
           $order +=1;
         }
