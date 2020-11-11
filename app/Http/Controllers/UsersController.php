@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    const AUTH_TYPES = ['owner'=>'OWNER','manager'=>'MANAGER','staff'=>'STAFF'];
+    const AUTH_TYPES = ['2'=>'OWNER','5'=>'MANAGER','7'=>'STAFF'];
     public function index()
     {
-      $users =User::where('existence',true)->get();
+      $users =User::where([['existence',true],['role','!=',1]])->get();
       return view('users.index',[
           'users' => $users
       ]);
@@ -60,7 +61,7 @@ class UsersController extends Controller
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->role = $request->role;
-      $user->password = $request->password;
+      $user->password = Hash::make($request->password);
       $user->save();
       return redirect('users');
     }

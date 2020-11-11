@@ -2,12 +2,18 @@
 
 @section('content')
 
+<div class="row mt-3 mb-3">
+  <div class="col-6">
+    <h3>Tattoos</h3>
+  </div>
+</div>
 {!! Form::open(['route' => 'tattoos.index']) !!}
 {!! Form::label('current', 'Show Current') !!}
 {!! Form::month('current',$current) !!}
 {!! Form::submit('Show') !!}
 {!! Form::close() !!}
-<table class="table text-center mt-5">
+
+<table class="table text-center mt-5" style="width:50vw;" align="center">
     <thead>
         <th>Order</th>
         <th>Artist</th>

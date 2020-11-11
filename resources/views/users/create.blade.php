@@ -3,7 +3,7 @@
 @section('content')
 @include('commons.error_messages')
 
-<h1>ユーザ新規作成</h1>
+<h1>Create User</h1>
 
 <div class="row">
     <div class="col-6">

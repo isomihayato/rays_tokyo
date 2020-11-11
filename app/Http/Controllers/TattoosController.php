@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Tattoo;
 use App\User;
 use DateTime;
@@ -14,6 +15,20 @@ class TattoosController extends Controller
     {
       // eval(\Psy\sh());
       $current = is_null($request->current) ? now() : new DateTime($request->current);
+
+      if (Auth::user()->role > 7)
+      {// >manager?
+        $tattoos = Tattoo::whereBetween('created_at',[
+          $current->modify("first day of this month")->format('Y-m-d'),
+          $current->modify("last day of this month")->format('Y-m-d'),
+        ])->orderBy('order', 'asc')->get();
+      }else
+      {// staff
+        $tattoos = Tattoo::whereBetween('created_at',[
+          $current->modify("first day of this month")->format('Y-m-d'),
+          $current->modify("last day of this month")->format('Y-m-d'),
+        ])->where('user_id','=',Auth::id())->orderBy('order', 'asc')->get();
+      }
 
       $tattoos = Tattoo::whereBetween('created_at',[
         $current->modify("first day of this month")->format('Y-m-d'),
@@ -30,7 +45,7 @@ class TattoosController extends Controller
     {
         $tattoo = new Tattoo;
         $artists = ['0'=>'選択してください'];
-        foreach(User::where('existence',true)->get() as $user){
+        foreach(User::where([['existence',true],['role','!=',1]])->get() as $user){
           $artists += array($user->id=>$user->name);
         }
         return view('tattoos.create',[

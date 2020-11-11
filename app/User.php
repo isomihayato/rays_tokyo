@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tattoo::class);
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

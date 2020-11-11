@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
-<h3>画像アップロード</h3>
+<div class="row mt-3 mb-3">
+  <div class="col-6">
+    <h3>Create Tattoos</h3>
+  </div>
+</div>
 
 {!! Form::model($tattoo,['route' => 'tattoos.store','files'=>true]) !!}
 <div class="container">
@@ -14,7 +17,7 @@
   </div>
   <div class="row mt-3 mb-3">
       <div class="col-6">
-        {!! Form::label('insert_at', 'Upload Files') !!}
+        {!! Form::label('insert_at', 'Append month') !!}
         {!! Form::month('insert_at',now()) !!}
       </div>
   </div>

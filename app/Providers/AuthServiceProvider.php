@@ -26,5 +26,17 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('announcements.read', 'App\Policies\AnnouncementPolicy@read');
+
+        Gate::define('system-only',function($user){
+          return ($user->role==1);
+        });
+
+        Gate::define('manager-higher',function($user){
+          return ($user->role>0 && $user->role<=5);
+        });
+
+        Gate::define('staff-higher',function($user){
+          return ($user->role>0 && $user->role<=7);
+        });
     }
 }

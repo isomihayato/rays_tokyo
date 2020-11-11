@@ -1,0 +1,218 @@
+@media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5){
+  body{
+    /* font-family: 'parisine-office-std', 'ヒラギノ明朝 Pro W6', 'ＭＳ Ｐ明朝','MS PMincho', 'メイリオ',serif; */
+    /* font-family: 'HGS明朝E', 'ヒラギノ明朝 Pro W6'; */
+    font-family: 'YuMincho','Yu Mincho', 'Times New Roman', 'HGS明朝E', 'ヒラギノ明朝 Pro W6', 'ＭＳ Ｐ明朝','MS PMincho', 'メイリオ', 'Meiryo', serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  section{
+    padding: 1rem;
+  }
+  /**********************  common  ****************************/
+  .mtb-5vh{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .mlr-20px{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .outer{
+    width: 90%;
+    height: inherit;
+    margin: 0 auto;
+  }
+  div.content__left,div.content__center,div.content__right{
+    margin:10vh 0;
+  }
+
+  .unstarted-mode:not(.playing-mode) .ytp-cued-thumbnail-overlay:not([aria-hidden=true]),
+  .ended-mode .ytp-cued-thumbnail-overlay:not([aria-hidden=true]){
+    width: auto;
+  }
+  /**********************  end  ****************************/
+
+  /**********************  vendor override  ****************************/
+  .navbar-light .navbar-toggler{
+    border-color:white;
+  }
+  /**********************  end  ****************************/
+
+
+  /**********************  header  ****************************/
+  .head_nav{
+    width: 90vw;
+    background-color: white;
+  }
+  .sp_top__logo{
+    width: 10rem;
+  }
+  .kv{
+    height: 70vh;
+  }
+  .top_message{
+    font-size: 2rem;
+    /* font-family: gautreaux, sans-serif;
+    font-weight: 800;
+    font-style: normal; */
+
+    /* font-family: p22-allyson-pro, sans-serif;
+    font-weight: 600;
+    font-style: normal; */
+
+    /* font-family: brush-atf, sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+    font-family: karmina, serif;
+    font-weight: 700;
+    font-style: normal;
+    margin:5vh 0 10vh 0;
+    margin-top: 8vh;
+    width: 90vw;
+  }
+  .top_message small{
+    font-family: karmina, serif;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    font-size: .8rem;
+  }
+  /**********************  end  ****************************/
+
+ /**********************  content  ****************************/
+  .area_title{
+    font-size: 1.8rem;
+    font-family: karmina, serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+  .area_title small{
+    display: block;
+    font-size: .6rem;
+  }
+  .anchor_arrow{
+    display: block;
+    float: right;
+    font-size: 1.4rem;
+  }
+  .anchor_arrow a{
+    color: black;
+  }
+  .body img{
+    display: block;
+    margin: 0 auto;
+  }
+  ul.blogs{
+    padding: 0;
+  }
+  ul.blogs li{
+    display: inline-flex;
+    height: 80px;
+    list-style: none;
+  }
+  ul.blogs img{
+    /* float: left; */
+    width: 80px;
+    height: 80px;
+  }
+  ul.blogs .wrapper{
+    display: inline-block;
+    width: 200px;
+  }
+  ul.blogs .blogs_created_at{
+    font-size: .8rem;
+    margin-left: 10px;
+  }
+  ul.blogs .blogs_title{
+    margin-left: 10px;
+  }
+  ul.blogs .blogs_body{
+    margin-left: 10px;
+  }
+
+
+  .content__left{
+    padding-right:0;
+  }
+
+  .content__center{
+    padding-left: 0;
+  }
+  .youtube{
+    width: 92vw;
+    height: 45vh;
+  }
+  .map{
+    width: 100%;
+    height: 50%;
+  }
+  .footer{
+    background-color: #1f1f1f;
+    width: 100%;
+    height: 120vh;
+  }
+  .footer .outer{
+    padding: 30px;
+  }
+  .footer__emb{
+    background-color: white;
+    height: 20%;
+  }
+  .footer__emb img{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 12px;
+  }
+  .footer__navs table{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 8vh 0;
+    transform: translateX(20px);
+    width: 100%;
+  }
+  .footer__navs table tr{
+    height: 50px;
+  }
+  .footer__card{
+    margin: 5vh 0;
+  }
+  .footer__card img{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+  .footer__sns{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .footer__sns img{
+    width: 2rem;
+    transform: translateY(-2px);
+  }
+  .footer__sns i{
+    color: white;
+    width: 1.6rem;
+  }
+  .footer hr{
+    background-color: white;
+    margin-bottom: 5px;
+  }
+  .footer__copyright{
+    color: white;
+    font-size: .7rem;
+    text-align: center;
+  }
+
+ /**********************  end  ****************************/
+
+
+ /**********************  footer  ****************************/
+ /**********************  end  ****************************/
+}
