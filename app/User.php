@@ -46,4 +46,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+    public function introduces()
+    {
+        return $this->hasMany(Introduce::class);
+    }
+    public function ecimages()
+    {
+        return $this->hasMany(Ecimage::class);
+    }
 }

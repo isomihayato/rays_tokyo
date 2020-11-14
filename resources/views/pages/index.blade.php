@@ -75,7 +75,7 @@
                 {{ (new DateTime($article->created_at))->format("Y.m.d") }}
               </div>
               <div class="blogs_title">Title: {{$article->title}}</div>
-              <div class="blogs_body">{!! mb_strcut($article->body,0,50) !!}</div>
+              <div class="blogs_body">{!! mb_strcut(strip_tags(str_replace("\r\n", '', $article->body)),0,50) !!}</div>
             </div>
           </li>
           <hr>

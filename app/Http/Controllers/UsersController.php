@@ -33,6 +33,7 @@ class UsersController extends Controller
 
       return view('users.create',[
         'user' => $user,
+        'authes' => self::AUTH_TYPES,
       ]);
     }
 
@@ -41,12 +42,14 @@ class UsersController extends Controller
       $request->validate([
         'name' => 'required|max:255',
         'role' => 'required|max:16',
-        'password' => 'required'
+        'login_id' => 'required',
+        'password' => 'required',
       ]);
       $user = new User;
       $user->name = $request->name;
       $user->role = $request->role;
-      $user->password = $request->password;
+      $user->login_id = $request->login_id;
+      $user->password = Hash::make($request->password);
       $user->save();
       return redirect('users');
     }
@@ -56,7 +59,7 @@ class UsersController extends Controller
       $request->validate([
         'name' => 'required|max:255',
         'role' => 'required|max:16',
-        'password' => 'required'
+        'password' => 'required',
       ]);
       $user = User::findOrFail($id);
       $user->name = $request->name;
@@ -70,7 +73,8 @@ class UsersController extends Controller
     public function destroy($id)
     {
       $user = User::findOrFail($id);
-      $user->delete();
+      $user->existence = false;
+      $user->save();
       return redirect('users');
     }
 

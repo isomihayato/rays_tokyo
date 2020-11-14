@@ -44,7 +44,11 @@ class ArticlesController extends Controller
     {
         $article = new Article;
         $categories = ['0'=>'選択して下さい。'];
-        $cates = Category::where([['title','!=','recruit']])->get();
+        if (Auth::user()->role == 1) {
+          $cates = Category::all();
+        }else {
+          $cates = Category::where([['title','!=','recruit'],['title','!=','sdcp']])->get();
+        }
         foreach ($cates as $category) {
           $categories[$category->id] =  $category->title;
         }
@@ -57,13 +61,16 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
+      $request->validate([
+        'thumbnail' =>'required'
+      ]);
       $path = str_replace('public/','',$request->thumbnail->store('public'));
       $article = User::findOrFail(Auth::id())->articles()->create([
         'title' => $request->title,
-        'category' => $request->category,
         'thumbnail' => $path,
         'body' => $request->editor,
         'release_at' => $request->release_at,
+        'category_id' => $request->category
       ]);
       $article->save();
       return redirect('articles');
@@ -78,11 +85,11 @@ class ArticlesController extends Controller
         $path = str_replace('public/','',$request->thumbnail->store('public'));
       }
 
-      $article->title      = $request->title;
-      $article->category   = $request->category;
-      $article->thumbnail  = $path;
-      $article->body       = $request->editor;
-      $article->release_at = $request->release_at;
+      $article->title         = $request->title;
+      $article->category_id   = $request->category;
+      $article->thumbnail     = $path;
+      $article->body          = $request->editor;
+      $article->release_at    = $request->release_at;
       $article->save();
       return redirect('articles');
     }
@@ -96,7 +103,12 @@ class ArticlesController extends Controller
 
     public function recruit()
     {
-      $article =  Article::where('category','=',Category::where('title','=','recruit')->get()[0]->id)->get()[0];
+      if (Category::where('title','=','recruit')->exists() &&
+      Category::where('title','=','recruit')->get()[0]->articles()->exists()) {
+        $article =  Category::where('title','=','recruit')->get()[0]->articles[0];
+      }else{
+        return redirect('/home');
+      }
 
       return view('articles.recruit',[
         'article' => $article,
@@ -105,7 +117,12 @@ class ArticlesController extends Controller
 
     public function sdcp()
     {
-      $article =  Article::where('category','=',Category::where('title','=','sdcp')->get()[0]->id)->get()[0];
+      if (Category::where('title','=','sdcp')->exists() &&
+      Category::where('title','=','sdcp')->get()[0]->articles()->exists()) {
+        $article =  Category::where('title','=','sdcp')->get()[0]->articles[0];
+      }else{
+        return redirect('/home');
+      }
 
       return view('articles.sdcp',[
         'article' => $article,

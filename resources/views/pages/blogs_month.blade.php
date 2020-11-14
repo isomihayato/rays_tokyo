@@ -3,20 +3,17 @@
 @section('content')
 <div class="content__center" style="margin-bottom:0;">
   <div class="area_title text-center">
-    Blogs
+    {{$current->format('Y年m月')}} Blog
     <small>ブログ一覧</small>
   </div>
 </div>
 
 <section class="content">
-  @foreach ($categories as $category)
+
   <div class="content__left" style="margin-top:0;">
-    <div class="middlesize_title">
-      {{$category->title}}
-    </div>
     <div class="body">
       <ul class="blogs mtb-5vh mlr-20px">
-        @foreach ($category->articles as $article)
+        @foreach ($articles as $article)
         <a href="/blog?article={{$article->id}}">
           <li>
             <img src="/storage/{{$article->thumbnail}}" alt="">
@@ -34,21 +31,6 @@
       </ul>
     </div>
   </div>
-  @endforeach
-
-  <div class="content__left" style="margin-top:0;">
-    <div class="middlesize_title">
-      過去ログ
-    </div>
-    <div class="body">
-      <ul class="blogs mtb-5vh mlr-20px">
-        @foreach($logs as $key => $value)
-        <a href="blogs_month?current={{$key}}"><li>{{$key}}({{$value}})</li></a>
-        @endforeach
-      </ul>
-    </div>
-  </div>
-
 </section>
 
 @endsection

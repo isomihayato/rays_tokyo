@@ -1,0 +1,29 @@
+name: 本番サーバへのデプロイ
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: バックエンドの準備
+      run: composer install
+    - name: フロントエンドのビルド
+      run: npm install && npm run prod
+      env:
+        APP_ENV: "production"
+        APP_DEBUG: "false"
+        APP_URL: "https://testtest0022.uh-oh.jp"
+    - name: 秘密鍵のコピー
+      run: echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: ファイルをサーバに同期
+      run: rsync -rlOtcv --delete --exclude-from=.rsyncignore -e "ssh -i id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ brownfoal39@brownfoal39.sakura.ne.jp:/var/www/vhost/testtest0022.uh-oh.jp/

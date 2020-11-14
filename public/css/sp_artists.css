@@ -1,0 +1,29 @@
+@media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5){
+  .content{
+    background-color: black;
+  }
+  .content a{
+    display: contents;
+  }
+  .artist_name{
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    height: 40px;
+    border-bottom: 1px solid white;;
+    margin-bottom: 15px;
+  }
+  .artist_box{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .insta_icon{
+    display: inline-block;
+    font-size: 2rem;
+  }
+  .insta_id{
+    display: inline-block;
+  }
+}

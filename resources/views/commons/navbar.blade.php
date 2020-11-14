@@ -20,6 +20,14 @@
                             <li class="dropdown-item">{!! link_to_route('notices.index', 'Notices') !!}</li>
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-item">{!! link_to_route('notices.create', 'Create Notices', [], []) !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('introduces.index', 'Introduces', [], []) !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('introduces.create', 'Create Introduce', [], []) !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('ecimages.index', 'Ecimages', [], []) !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('ecimages.create', 'Create Ecimages', [], []) !!}</li>
                         </ul>
                     </li>
                     @endcan

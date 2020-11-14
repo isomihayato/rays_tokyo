@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticlesTable extends Migration
+class CreateEcimagesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('ecimages', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->unsignedBigInteger('user_id');
-          $table->string('title',500);
-          $table->string('thumbnail',500);
-          $table->text('body');
-          $table->datetime('release_at');
-          $table->timestamps();
+          $table->string('place',255);
+          $table->string('path',500);
 
+          $table->timestamps();
           $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -33,6 +31,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('articles');
+      Schema::dropIfExists('ecimages');
     }
 }

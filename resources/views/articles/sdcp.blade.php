@@ -52,7 +52,7 @@
 
   <div class="row mt-3 mb-3">
     <div class="col-6">
-      <h3>Edit Recruit</h3>
+      <h3>Edit SDCP</h3>
     </div>
   </div>
         {!! Form::label('body','Body') !!}
@@ -61,7 +61,7 @@
   <div class="row mt-3 mb-3">
       <div class="col-6">
         {!! Form::hidden('title','sdcp') !!}
-        {!! Form::hidden('category',$article->category) !!}
+        {!! Form::hidden('category',$article->category_id) !!}
         {!! Form::hidden('release_at',$article->release_at) !!}
         {!! Form::submit('Upload') !!}
       </div>

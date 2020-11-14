@@ -23,7 +23,7 @@
             branding: false,
             image_title: true,
             automatic_uploads: true,
-            images_upload_url: 'postAccess?_token={{csrf_token()}}',
+            images_upload_url: '../postAccess?_token={{csrf_token()}}',
             file_picker_types: 'image',
             file_picker_callback: function(cb, value, meta) {
                 var input = document.createElement('input');
@@ -48,22 +48,21 @@
             });
     </script>
 
-{!! Form::model($article,['route' => ['articles.update',$article->id],'method' => 'put','files'=>true]) !!}
-
+{!! Form::model($introduce,['route' => ['introduces.update',$introduce->id],'method'=>'put']) !!}
+<div class="container">
   <div class="row mt-3 mb-3">
-    <div class="col-6">
-      <h3>Edit Recruit</h3>
-    </div>
+      <div class="col-6">
+          {!! Form::label('title', 'Titile') !!}
+          {!! Form::text('title',null,['style'=>'width:30vw;']) !!}
+      </div>
   </div>
-        {!! Form::label('body','Body') !!}
-        {!! Form::textarea('body',null,['name'=>'editor','height'=>'700']) !!}
+
+  {!! Form::label('body','Body') !!}
+  {!! Form::textarea('body',null,['name'=>'editor','height'=>'700']) !!}
 
   <div class="row mt-3 mb-3">
       <div class="col-6">
-        {!! Form::hidden('title','recruit') !!}
-        {!! Form::hidden('category',$article->category_id) !!}
-        {!! Form::hidden('release_at',$article->release_at) !!}
-        {!! Form::submit('Upload') !!}
+        {!! Form::submit('Save!') !!}
       </div>
   </div>
 </div>

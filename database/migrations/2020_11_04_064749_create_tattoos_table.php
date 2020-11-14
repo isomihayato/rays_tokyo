@@ -17,7 +17,7 @@ class CreateTattoosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->integer('order');
-            $table->text('path');
+            $table->string('path',500);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

@@ -15,7 +15,11 @@ Route::get('/','PagesController@index');
 Route::get('/index','PagesController@index')->name('pages.index');
 Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
 Route::get('/artists','PagesController@artists')->name('pages.artists');
+Route::get('/show_artist','PagesController@show_artist')->name('pages.show_artist');
 Route::get('/blogs','PagesController@blogs')->name('pages.blogs');
+Route::get('/blogs_month','PagesController@blogs_month')->name('pages.blogs_month');
+Route::get('/blog','PagesController@blog')->name('pages.blog');
+Route::get('/recruit','PagesController@recruit')->name('pages.recruit');
 
 
 Route::get('home','ToppagesController@index');
@@ -45,3 +49,9 @@ Route::post('tattoos/arrange','TattoosController@arrange')->name('tattoos.arrang
 
 Route::resource('notices','NoticesController')->middleware('auth');
 Route::post('notices/postAccess','NoticesController@postAccess')->name('notices.postAccess')->middleware('auth');
+
+Route::resource('introduces','IntroducesController')->middleware('auth');
+Route::post('introduces/postAccess','IntroducesController@postAccess')->name('introduces.postAccess')->middleware('auth');
+
+Route::resource('ecimages','EcimagesController')->middleware('auth');
+Route::post('ecimages/postAccess','EcimagesController@postAccess')->name('ecimages.postAccess')->middleware('auth');

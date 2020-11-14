@@ -21,16 +21,16 @@
           <a class="nav-link disabled" href="#">TECHNIQUE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ARTIST</a>
+          <a class="nav-link" href="/artists">ARTIST</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">ABOUT US</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">BLOGS</a>
+          <a class="nav-link" href="/blogs">BLOGS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">RECRUIT</a>
+          <a class="nav-link" href="/recruit">RECRUIT</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">CONTACT</a>

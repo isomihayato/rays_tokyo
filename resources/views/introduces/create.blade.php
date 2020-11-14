@@ -48,22 +48,27 @@
             });
     </script>
 
-{!! Form::model($article,['route' => ['articles.update',$article->id],'method' => 'put','files'=>true]) !!}
-
+{!! Form::model($introduce,['route' => 'introduces.store']) !!}
+<div class="container">
   <div class="row mt-3 mb-3">
-    <div class="col-6">
-      <h3>Edit Recruit</h3>
-    </div>
+      <div class="col-6">
+          {!! Form::label('title', 'Titile') !!}
+          {!! Form::text('title',null,['style'=>'width:30vw;']) !!}
+      </div>
   </div>
-        {!! Form::label('body','Body') !!}
-        {!! Form::textarea('body',null,['name'=>'editor','height'=>'700']) !!}
+  <div class="row mt-3 mb-3">
+      <div class="col-6">
+        {!! Form::label('artist', 'Artist') !!}
+        {!! Form::select('artist',$artists,Auth::id()) !!}
+      </div>
+  </div>
+
+  {!! Form::label('body','Body') !!}
+  {!! Form::textarea('body',null,['name'=>'editor','height'=>'700']) !!}
 
   <div class="row mt-3 mb-3">
       <div class="col-6">
-        {!! Form::hidden('title','recruit') !!}
-        {!! Form::hidden('category',$article->category_id) !!}
-        {!! Form::hidden('release_at',$article->release_at) !!}
-        {!! Form::submit('Upload') !!}
+        {!! Form::submit('Save!') !!}
       </div>
   </div>
 </div>

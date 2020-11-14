@@ -107,6 +107,7 @@ only screen and (min-device-pixel-ratio : 1.5){
   }
   ul.blogs{
     padding: 0;
+    word-break: break-all;
   }
   ul.blogs li{
     display: inline-flex;
@@ -120,7 +121,7 @@ only screen and (min-device-pixel-ratio : 1.5){
   }
   ul.blogs .wrapper{
     display: inline-block;
-    width: 200px;
+    width: 100%;
   }
   ul.blogs .blogs_created_at{
     font-size: .8rem;
@@ -128,6 +129,7 @@ only screen and (min-device-pixel-ratio : 1.5){
   }
   ul.blogs .blogs_title{
     margin-left: 10px;
+    width: max-content;
   }
   ul.blogs .blogs_body{
     margin-left: 10px;
