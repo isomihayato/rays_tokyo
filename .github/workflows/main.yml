@@ -26,4 +26,4 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: ファイルをサーバに同期
-      run: rsync -rlOtcv --delete --exclude-from=.rsyncignore -e "ssh -i id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ brownfoal39@brownfoal39.sakura.ne.jp:~/tokyo_rays
+      run: rsync -rlOtcv --delete --exclude-from=.rsyncignore -e "ssh -i id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ brownfoal39@brownfoal39.sakura.ne.jp:~/www/tokyo_rays
