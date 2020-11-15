@@ -45,7 +45,7 @@ class TattoosController extends Controller
     {
         $tattoo = new Tattoo;
         $artists = ['0'=>'選択してください'];
-        foreach(User::where([['existence',true],['role','!=',1]])->get() as $user){
+        foreach(User::where([['existence',true],['role','!=',1],['role','!=',3]])->get() as $user){
           $artists += array($user->id=>$user->name);
         }
         return view('tattoos.create',[

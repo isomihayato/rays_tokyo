@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    const AUTH_TYPES = ['2'=>'OWNER','5'=>'MANAGER','7'=>'STAFF'];
+    const AUTH_TYPES = ['2'=>'OWNER','3'=>'OWNER MANAGER','5'=>'MANAGER','7'=>'STAFF'];
     public function index()
     {
       $users =User::where([['existence',true],['role','!=',1]])->get();

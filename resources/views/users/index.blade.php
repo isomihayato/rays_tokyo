@@ -24,7 +24,7 @@
             <td>{{ $user->name }}</td>
             <td>
               @if (!is_null($user->role))
-              {{ ['1'=>'admin','2'=>'OWNER','5'=>'MANAGER','7'=>'STAFF'][strtoupper($user->role)] }}
+              {{ ['1'=>'admin','2'=>'OWNER','3'=>'OWNER MANAGER','5'=>'MANAGER','7'=>'STAFF'][strtoupper($user->role)] }}
               @endif
             </td>
             <td>

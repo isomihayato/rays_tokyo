@@ -37,7 +37,7 @@
       {{$user->name}}
     </div>
     <div class="z_card">
-      @foreach($user->ecimages()->where('place','gallery')->get() as $ecimage)
+      @foreach($user->ecimages as $ecimage)
       <div class="thumbnail" style="background-image:url(/storage/{{$ecimage->path}})">
         <img src="/storage/{{$ecimage->path }}" alt="">
       </div>
