@@ -47,7 +47,9 @@ class PagesController extends Controller
                 'users' => $users,
               ]);
         } else {
-            return 'pc';
+          return view('pages.pc.gallery',[
+            'users' => $users,
+          ]);
         }
   }
   public function artists(Request $request)

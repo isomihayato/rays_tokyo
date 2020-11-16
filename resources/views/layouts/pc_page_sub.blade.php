@@ -29,8 +29,13 @@
 
             {{-- エラーメッセージ --}}
             @include('commons.error_messages')
+            <section class="header">
+              @include('commons.pc.page_navbar')              
+            </section>
 
             @yield('content')
+
+            @include('commons.pc.page_footer')
 
     </body>
 </html>

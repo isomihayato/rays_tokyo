@@ -1,4 +1,4 @@
-@extends('layouts.page')
+@extends('layouts.pc_page')
 <!-- Demo styles -->
 <style>
 
@@ -10,47 +10,40 @@
   }
 
   .swiper-slide {
-    width: 100px;
-    height: 100px;
+    width: 600px;
     background-position: center;
     background-size: cover;
   }
 </style>
 @section('content')
 <section class="header">
-  <div class="head_nav">
     @include('commons.pc.page_navbar')
-  </div>
-  <div class="top_message">
-    Nothing's Gonna change our hungriness.
-    <small>unwavering determination</small>
-  </div>
   <div class="kv">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="/kv/01.jpeg" width="400" height="500">
+          <img src="/kv/pc/01.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/02.jpg" width="400" height="500">
+          <img src="/kv/pc/02.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/03.jpeg" width="400" height="500">
+          <img src="/kv/pc/03.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/04.jpg" width="400" height="500">
+          <img src="/kv/pc/04.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/05.jpg" width="400" height="500">
+          <img src="/kv/pc/05.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/06.jpg" width="400" height="500">
+          <img src="/kv/pc/06.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/07.jpg" width="400" height="500">
+          <img src="/kv/pc/07.jpg" width="800" height="600">
         </div>
         <div class="swiper-slide">
-          <img src="/kv/08.jpg" width="400" height="500">
+          <img src="/kv/pc/08.jpg" width="800" height="600">
         </div>
 
       </div>
@@ -60,13 +53,10 @@
 
 
 <section class="content">
-    <div class="content__left" style="margin-top:0;">
-      <div class="area_title">
-        News & Blogs
-        <small>ブログ&ニュース</small>
-      </div>
+  <h3>News & Blogs  <small>ブログニュース</small></h3>
+    <div class="content__left_blogs" style="overflow:scroll;">
       <div class="body">
-        <ul class="blogs mtb-5vh mlr-20px">
+        <ul class="blogs">
           @foreach ($articles as $article)
           <li>
             <img src="/storage/{{$article->thumbnail}}" alt="">
@@ -82,17 +72,14 @@
           @endforeach
         </ul>
       </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
     </div>
+    <button type="button" class="btn btn-outline-dark center more_btn mt-5 mb-5">More</button>
+
+    <h3>GALLERY <small>ギャラリー</small> </h3>
+
 
     <div class="content__center">
-      <div class="area_title text-center">
-        Gallery
-        <small>タトゥーギャラリー</small>
-      </div>
-      <div class="body mb-3" style="overflow:hidden;">
+      <div class="body" style="overflow:hidden;">
         <div class="gallery-container"style="height:300px;">
             <div class="swiper-wrapper">
               @foreach ($tattoos as $tattoo)
@@ -101,121 +88,143 @@
             </div>
           </div>
       </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
     </div>
+    <button type="button" class="btn btn-outline-dark center more_btn mt-5 mb-5">More</button>
 
-    <div class="content__left mt-5">
-      <div class="area_title">
-        System
-        <small>施術情報</small>
-      </div>
+
+    <h3>SYSTEM <small>施術情報</small></h3>
+
+    <div class="content__left">
       <div class="body">
         <p>当店での、施術を行うための事前知識をご説明いたします。</p>
       </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
     </div>
+    <button type="button" class="btn btn-outline-dark center more_btn mt-5 mb-5">More</button>
 
-    <div style="margin:1vh 0;"></div>
 
-    <div class="content__center">
-      <div class="area_title text-center" style="margin-bottom:0;">
-        Artist
-        <small>アーティスト</small>
-      </div>
-      <div class="body">
-        <div id="mybook"></div>
-      </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
+    <h3>ARTIST<small>アーティスト</small></h3>
 
     <div class="content__left">
-      <div class="area_title">
-        Youtube
-        <small>ユーチューブ</small>
-      </div>
       <div class="body">
-        <iframe class="youtube" src="https://www.youtube.com/embed/8gVHxJl-2Hg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <div id="mybook" class="center"></div>
       </div>
     </div>
+    <button type="button" class="btn btn-outline-dark center more_btn mt-5 mb-5">More</button>
 
-    <div class="content__center">
-      <div class="area_title text-center">
-        Access
-        <small>店舗情報</small>
-      </div>
+
+    <h3>YOUTUBE<small>ユーチューブ</small></h3>
+    <div class="content__left">
       <div class="body">
-        <div class="outer">
-          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d816.9045692251021!2d135.7784338!3d35.0162595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41975523df201a95!2sTATTOO+STUDIO+Ray&#39;s!5e0!3m2!1sja!2sjp!4v1520754949742" allowfullscreen></iframe>
+        <div class="youtube_outer center">
+          <iframe class="youtube" src="https://www.youtube.com/embed/8gVHxJl-2Hg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"style="width:inherit;height:inherit;"></iframe>
         </div>
       </div>
     </div>
 
-    <div class="content__center">
-      <div class="area_title text-center">
-        ONLINE STORE
-        <small>レイズストアー</small>
-      </div>
+    <h3>ACCESS<small>アクセス</small></h3>
+
+    <div class="content__left">
       <div class="body">
-        <a href="#">
-          <img src="/images/icon/store.jpg" width="300" alt="store">
-        </a>
+        <div class="map_outer center">
+          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d816.9045692251021!2d135.7784338!3d35.0162595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41975523df201a95!2sTATTOO+STUDIO+Ray&#39;s!5e0!3m2!1sja!2sjp!4v1520754949742" style="width:inherit;height:inherit;" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <h3>ONLINE STORE</h3>
+
+    <div class="content__left">
+      <div class="body">
+        <div class="text-center">
+          <a href="#">
+            <img src="/images/icon/store.jpg" width="300" alt="store">
+          </a>
+        </div>
       </div>
     </div>
 </section>
 
+<hr>
 
 <section class="footer">
   <div class="outer">
     <div class="footer__emb">
       <img src="/images/logos/footer_emb.jpg">
+      <p>TATTOO STUDIO Ray's <br>
+          〒606-8351<br>
+          京都市左京区岡崎徳成町27-15（受付：1F）<br>
+          Open：10：00〜<br>
+          Closed：不定休</p>
     </div>
-    <div class="footer__navs">
-      <table>
-        <tbody>
-          <tr>
-            <td>HOME</td>
-            <td>GALLERY</td>
-          </tr>
-          <tr>
-            <td>SYSTEM</td>
-            <td>TECHNIQUE</td>
-          </tr>
-          <tr>
-            <td>ARTIST</td>
-            <td>ABOUT US</td>
-          </tr>
-          <tr>
-            <td>BLOGS</td>
-            <td>RECRUIT</td>
-          </tr>
-          <tr>
-            <td>CONTACT</td>
-            <td>ONLINE STORE</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="footer__card">
-      <img src="/images/icon/cards.png" alt="">
-    </div>
-    <div class="footer__sns">
-      <i class="far fa-envelope"></i>
-      <i class="fab fa-twitter-square"></i>
-      <i class="fab fa-facebook-square"></i>
-      <img src="/images/sns/b.png" alt="b">
-      <i class="fab fa-line"></i>
-    </div>
-    <hr>
-    <div class="footer__copyright">
-      ©TATTOO STUDIO Ray's All Rights Reserved.
-    </div>
+    <table class="table table-borderless footer__table">
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li>■&nbsp;HOME</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;SYSTEM</li>
+              <li> <a href="#">・Precautions</a> </li>
+              <li> <a href="#">・Price</a> </li>
+              <li> <a href="#">・Reservation Flow</a> </li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;TECHNIQUE</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;TATTOO GALLERY</li>
+            </ul>
+          </td>
+          <td>
+            <img src="/images/icon/cards.png" alt=""class="sns_card_img">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>■&nbsp;ARTIST</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;ABOUT US</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;CONTACT</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>■&nbsp;SHARE</li>
+              <li>
+                <div class="footer__sns">
+                  <i class="far fa-envelope"></i>
+                  <i class="fab fa-twitter-square"></i>
+                  <i class="fab fa-facebook-square"></i>
+                  <img src="/images/sns/b.png" alt="b" class="sns_img">
+                  <i class="fab fa-line"></i>
+                </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <hr>
+  <div class="footer__copyright">
+    ©TATTOO STUDIO Ray's All Rights Reserved.
+  </div>
+
 </section>
 
 
@@ -248,6 +257,10 @@
   },
   pagination: {
     el: '.swiper-pagination',
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
   },
 });
 

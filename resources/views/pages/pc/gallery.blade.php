@@ -1,54 +1,70 @@
-@extends('layouts.page_sub')
-<link rel="stylesheet" href="/css/sp_gallery.css">
-
+@extends('layouts.pc_page_sub')
+<link rel="stylesheet" href="/css/pc_gallery.css">
 @section('content')
 
-<style media="screen">
-  .gallery-container {
-    width: 100%;
-    height: 50vh;
-    padding:20px 0;
+<style>
+  html,
+  body {
+    position: relative;
+    height: 100%;
   }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
   .swiper-slide {
-    width: 80px;
-    height: 80px;
-    background-position: center;
-    background-size: cover;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
   }
 </style>
 
-<section class="header">
-  <div class="head_nav">
-    @include('commons.page_navbar')
-  </div>
-</section>
+<h3 class="text-center center mt-5">GALLERY<small>タトゥーギャラリー</small></h3>
 
 <section class="content">
-  <div class="content__center">
-    <div class="area_title text-center">
-      Gallery
-      <small>タトゥーギャラリー</small>
-    </div>
-  </div>
 
   @foreach ($users as $user)
+  <h3>{{$user->name}}</h3>
   <div class="content__left">
-    <div class="area_title">
-      {{$user->name}}
-    </div>
     <div class="z_card">
-      @foreach($user->ecimages as $ecimage)
-      <div class="thumbnail" style="background-image:url(/storage/{{$ecimage->path}})">
-        <img src="/storage/{{$ecimage->path }}" alt="">
-      </div>
+      @foreach($user->ecimages()->where('place','gallery')->get() as $ecimage)
+      <div class="thumbnail" style="background-image:url(/storage/{{$ecimage->path}})"></div>
       @endforeach
       <div class="body">
-          <div class="gallery-container">
-              <div class="swiper-wrapper">
-                @foreach ($user->tattoos as $tattoo)
-                <div class="swiper-slide" style="background-image:url(./storage/{{$tattoo->path}});width:300px;height:300px;z-index:999;"></div>
-                @endforeach
-              </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              @foreach ($user->tattoos as $tattoo)
+              <div class="swiper-slide" style="background-image:url(./storage/{{$tattoo->path}});width:300px;height:300px;z-index:999;"></div>
+              @endforeach  </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
           </div>
       </div>
     </div>
@@ -57,21 +73,13 @@
   @endforeach
 
 <script type="text/javascript">
-  var swiper = new Swiper('.gallery-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   });
 </script>
 
