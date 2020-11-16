@@ -1,36 +1,47 @@
+/************************ Common *******************************/
+img{
+  width: 100%;
+}
+h4{
+  font-family: serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+li{
+  list-style: none;
+}
+.center{
+  display: block;
+  margin: 0 auto;
+}
+.width_30{
+  width: 30%;
+}
+.width_40{
+  width: 40%;
+}
+.width_50{
+  width: 50%;
+}
+.width_60{
+  width: 60%;
+}
+
+.width_70{
+  width: 70%;
+}
+.width_80{
+  width: 80%;
+}
+
+.margin_40_0{
+  margin: 40px 0;
+}
+/************************ End *******************************/
 @media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
-  /************************ Common *******************************/
-  img{
-    width: 100%;
-  }
-  h4{
-    font-family: serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-  }
-  li{
-    list-style: none;
-  }
-  .center{
-    display: block;
-    margin: 0 auto;
-  }
-  .width_50{
-    width: 50%;
-  }
-  .width_70{
-    width: 70%;
-  }
-  .width_80{
-    width: 80%;
-  }
-  .margin_40_0{
-    margin: 40px 0;
-  }
-  /************************ End *******************************/
   /************************ content *******************************/
   .body{
     width: 80%;
@@ -81,4 +92,25 @@ only screen and (min-device-pixel-ratio : 1.5){
   }
 
   /********************** End *********************************/
+}
+@media screen and (min-device-width:760px){
+  img{
+    width: 30%;
+  }
+  .top_emb{
+    width: 60%;
+  }
+  .address{
+    text-align: center;
+    margin: 8vh;
+  }
+  ul li img{
+    margin: 7px 0;
+  }
+  section.footer p{
+    font-size: 15px;
+    font-family: serif;
+    text-align: center;
+    margin: 6vh 0;
+  }
 }
