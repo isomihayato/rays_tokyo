@@ -1,258 +1,64 @@
 @extends('layouts.page')
 <!-- Demo styles -->
-<style>
 
-
-  .gallery-container {
-    width: 100%;
-    height: 50vh;
-    padding:20px 0;
-  }
-
-  .swiper-slide {
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
-  }
-</style>
 @section('content')
+
 <section class="header">
-  <div class="head_nav">
-    @include('commons.page_navbar')
-  </div>
-  <div class="top_message">
-    Nothing's Gonna change our hungriness.
-    <small>unwavering determination</small>
-  </div>
-  <div class="kv">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="/kv/01.jpeg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/02.jpg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/03.jpeg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/04.jpg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/05.jpg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/06.jpg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/07.jpg" width="400" height="500">
-        </div>
-        <div class="swiper-slide">
-          <img src="/kv/08.jpg" width="400" height="500">
-        </div>
-
-      </div>
-    </div>
-  </div>
+  <img src="/images/tmp/emb.png" alt="emb">
+  <img src="/images/tmp/kv.jpg" alt="kv">
 </section>
-
-
 <section class="content">
-    <div class="content__left" style="margin-top:0;">
-      <div class="area_title">
-        News & Blogs
-        <small>ブログ&ニュース</small>
-      </div>
-      <div class="body">
-        <ul class="blogs mtb-5vh mlr-20px">
-          @foreach ($articles as $article)
-          <li>
-            <img src="/storage/{{$article->thumbnail}}" alt="">
-            <div class="wrapper">
-              <div class="blogs_created_at">
-                {{ (new DateTime($article->created_at))->format("Y.m.d") }}
-              </div>
-              <div class="blogs_title">Title: {{$article->title}}</div>
-              <div class="blogs_body">{!! mb_strcut(strip_tags(str_replace("\r\n", '', $article->body)),0,50) !!}</div>
-            </div>
-          </li>
-          <hr>
-          @endforeach
-        </ul>
-      </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
+  <img src="/images/tmp/body.png" alt="body" class="body">
+  <hr>
 
-    <div class="content__center">
-      <div class="area_title text-center">
-        Gallery
-        <small>タトゥーギャラリー</small>
-      </div>
-      <div class="body mb-3" style="overflow:hidden;">
-        <div class="gallery-container"style="height:300px;">
-            <div class="swiper-wrapper">
-              @foreach ($tattoos as $tattoo)
-              <div class="swiper-slide" style="background-image:url(./storage/{{$tattoo->path}});width:300px;height:300px;"></div>
-              @endforeach
-            </div>
-          </div>
-      </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
 
-    <div class="content__left mt-5">
-      <div class="area_title">
-        System
-        <small>施術情報</small>
-      </div>
-      <div class="body">
-        <p>当店での、施術を行うための事前知識をご説明いたします。</p>
-      </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
+  <h4>TATTOO STUDIO Ray’s TOKYO</h4>
+  <p class="address">〒151-0051 <br>東京都渋谷区千駄ヶ谷3-26-7 第12FMGビルB1F</p>
+  <a href="https://goo.gl/maps/9UrbSRFEazBY94LRA">  <img src="/images/tmp/google_map.png" alt="" class="center width_50"></a>
+  <a href="https://lin.ee/6yIXkH5">  <img src="images/tmp/line_link.png" class="link_btn mt-4"></a>
+  <a href="https://twitter.com/rays_co">  <img src="images/tmp/twitter_link.png" class="link_tw_btn mt-4"></a>
+  <div class="width_80 center">
+    <div id="insta-widget" class="iswg-base" data-username="tattoorays.tokyo" data-display-image-count="9" data-wrapper-width></div>
+    <script src="https://cdn.jsdelivr.net/gh/akinov/insta_window@v1.0/dist/main.js"></script>
+  </div>
 
-    <div style="margin:1vh 0;"></div>
+  <hr>
+  <a href="https://tattoo-rays.com/">  <img src="/images/tmp/kyoto_link_btn.png" class="mt-2"></a>
+  <a href="https://tattoo-rays.tw/">  <img src="/images/tmp/taipei_link_btn.png" class="mt-5"></a>
 
-    <div class="content__center">
-      <div class="area_title text-center" style="margin-bottom:0;">
-        Artist
-        <small>アーティスト</small>
-      </div>
-      <div class="body">
-        <div id="mybook"></div>
-      </div>
-      <div class="anchor_arrow">
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <div class="content__left">
-      <div class="area_title">
-        Youtube
-        <small>ユーチューブ</small>
-      </div>
-      <div class="body">
-        <iframe class="youtube" src="https://www.youtube.com/embed/8gVHxJl-2Hg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      </div>
-    </div>
-
-    <div class="content__center">
-      <div class="area_title text-center">
-        Access
-        <small>店舗情報</small>
-      </div>
-      <div class="body">
-        <div class="outer">
-          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d816.9045692251021!2d135.7784338!3d35.0162595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41975523df201a95!2sTATTOO+STUDIO+Ray&#39;s!5e0!3m2!1sja!2sjp!4v1520754949742" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="content__center">
-      <div class="area_title text-center">
-        ONLINE STORE
-        <small>レイズストアー</small>
-      </div>
-      <div class="body">
-        <a href="#">
-          <img src="/images/icon/store.jpg" width="300" alt="store">
-        </a>
-      </div>
-    </div>
+  <hr>
 </section>
-
-
 <section class="footer">
-  <div class="outer">
-    <div class="footer__emb">
-      <img src="/images/logos/footer_emb.jpg">
-    </div>
-    <div class="footer__navs">
-      <table>
-        <tbody>
-          <tr>
-            <td>HOME</td>
-            <td>GALLERY</td>
-          </tr>
-          <tr>
-            <td>SYSTEM</td>
-            <td>TECHNIQUE</td>
-          </tr>
-          <tr>
-            <td>ARTIST</td>
-            <td>ABOUT US</td>
-          </tr>
-          <tr>
-            <td>BLOGS</td>
-            <td>RECRUIT</td>
-          </tr>
-          <tr>
-            <td>CONTACT</td>
-            <td>ONLINE STORE</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="footer__card">
-      <img src="/images/icon/cards.png" alt="">
-    </div>
-    <div class="footer__sns">
-      <i class="far fa-envelope"></i>
-      <i class="fab fa-twitter-square"></i>
-      <i class="fab fa-facebook-square"></i>
-      <img src="/images/sns/b.png" alt="b">
-      <i class="fab fa-line"></i>
+
+    <ul>
+      <li>
+        <a href="https://lin.ee/6yIXkH5">        <img src="/images/tmp/line.png" alt=""></a>
+      </li>
+      <li>
+        <a href="https://raysco.shop/">        <img src="/images/tmp/store_btn.png" alt=""></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/tattoorays.tokyo/">        <img src="/images/tmp/insta_btn.png" alt=""></a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?time_continue=1&v=8gVHxJl-2Hg&feature=emb_logo">        <img src="/images/tmp/youtube.png" alt=""></a>
+      </li>
+    </ul>
+
+    <img src="/images/tmp/sdcp.png" class="sdcp center mt-5 mb-5">
+    <img src="/images/tmp/footer_emb.png" alt="" class="footer_emb">
+    <p>東京都渋谷区千駄ヶ谷3-26-7 第12FMGビルB1F <br> TEL : </p>
+    <img src="/images/tmp/card.png" class="width_70 center mb-5">
+    <a href="https://tattoo-rays.com">    <img src="images/tmp/kyoto_head_btn.png" class="mb-3"></a>
+    <a href="https://tattoo-rays.tw">    <img src="/images/tmp/taipei_studio_btn.png" class="mb-5"></a>
+
+    <div class="footer_nav">
+      <img src="/images/tmp/tyuubun.png" alt="">
+      <img src="/images/tmp/english.png" alt="">
+      <img src="/images/tmp/access.png" alt="">
     </div>
     <hr>
-    <div class="footer__copyright">
-      ©TATTOO STUDIO Ray's All Rights Reserved.
-    </div>
-  </div>
+    <div class="copyright">©TATTOO STUDIO Ray's All Rights Reserved.</div>
+
 </section>
-
-
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    effect: 'fade',
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-  });
-
-  var swiper = new Swiper('.gallery-container', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-  },
-});
-
-var src = [ '/images/artists/01.jpg', '/images/artists/02.jpg', '/images/artists/03.jpg'];
-
-$('#mybook').onebook(src);
-</script>
 @endsection
