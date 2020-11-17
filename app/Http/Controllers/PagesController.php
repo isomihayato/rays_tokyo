@@ -28,7 +28,7 @@ class PagesController extends Controller
                 'tattoos' => $tattoos,
               ]);
          } else {
-           return view('pages.pc.index',[
+           return view('pages.index',[
              'articles' => $articles,
              'tattoos' => $tattoos,
            ]);

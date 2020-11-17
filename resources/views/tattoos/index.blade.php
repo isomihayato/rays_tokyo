@@ -13,14 +13,14 @@
 {!! Form::submit('Show') !!}
 {!! Form::close() !!}
 
-<table class="table text-center mt-5" style="width:50vw;" align="center">
+<table class="table text-center mt-5" style="width:40vw;height:70vh;overflow:scroll;display:block;" align="center">
     <thead>
         <th>Order</th>
         <th>Artist</th>
         <th>Tattoo</th>
         <th>Delete</th>
     </thead>
-  <tbody style="overflow:scroll;">
+  <tbody>
       @foreach ($tattoos as $tattoo)
       <tr>
           <td style="vertical-align:middle;">

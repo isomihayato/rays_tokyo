@@ -1,4 +1,7 @@
 /************************ Common *******************************/
+body{
+  font-family: serif;
+}
 img{
   width: 100%;
 }
@@ -35,14 +38,38 @@ li{
 .width_80{
   width: 80%;
 }
+.width_90{
+  width: 90%;
+}
 
 .margin_40_0{
   margin: 40px 0;
 }
+.btn_box{
+  background-color: #cccccc;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 12px 0;
+  margin: 10px 0;
+}
 /************************ End *******************************/
+.body p{
+  font-size: .8rem;
+  line-height: .3rem;
+  transform: translateX(20px);
+  margin-bottom: 1rem;
+}
+a{
+  color: black;
+}
 @media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
   /************************ content *******************************/
+  .top_emb{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
   .body{
     width: 80%;
     display: block;
@@ -55,6 +82,14 @@ only screen and (min-device-pixel-ratio : 1.5){
     font-family: serif;
     font-size: .88rem;
     padding-left: 35px;
+  }
+  .sns_p{
+    padding-left: 40px;
+  }
+  .emb_p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
   }
   .link_btn{
     width: 70%;
@@ -69,9 +104,13 @@ only screen and (min-device-pixel-ratio : 1.5){
     text-align: center;
     margin: 7px 0;
   }
-  .sdcp{
-    width: 70%;
+
+  .insta{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
   }
+
   section.footer p{
     font-size: 15px;
     font-family: serif;
@@ -94,15 +133,55 @@ only screen and (min-device-pixel-ratio : 1.5){
   /********************** End *********************************/
 }
 @media screen and (min-device-width:760px){
+  body{
+    text-align: center;
+  }
   img{
     width: 30%;
   }
+  .kv{
+    width: 50%;
+  }
   .top_emb{
-    width: 60%;
+    width: 30%;
+    display: block;
+    margin: 0 auto;
   }
   .address{
     text-align: center;
     margin: 8vh;
+  }
+  .sns_p{
+    padding-left: 40px;
+  }
+  .emb_p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .body{
+    margin: 0 auto;
+    display: inline-table;
+    margin-top: 10px;
+  }
+  .body p{
+    font-size: .8rem;
+    line-height: .3rem;
+    transform: translateX(0);
+    margin-bottom: 1rem;
+  }
+  .insta{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+  .pc_wide{
+    width: 500px;
+    display: block;
+    margin: 15px auto;
+  }
+  ul{
+    padding: 0;
   }
   ul li img{
     margin: 7px 0;

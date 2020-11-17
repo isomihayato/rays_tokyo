@@ -2,7 +2,7 @@
 
 @section('content')
 
-<table class="table">
+<table class="table" style="width:40vw;height:70vh;overflow:scroll;display:block;">
   <thead>
     <th>ID</th>
     <th>Title</th>

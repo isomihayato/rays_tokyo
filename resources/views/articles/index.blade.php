@@ -12,7 +12,7 @@
     <h3>Articles</h3>
   </div>
 </div>
-<table class="table table-striped text-center mt-5">
+<table class="table table-striped text-center mt-5" style="width:40vw;height:70vh;overflow:scroll;display:block;">
   <thead>
     <th>Edit</th>
     <th style="width:10vw;">Thumbnail</th>

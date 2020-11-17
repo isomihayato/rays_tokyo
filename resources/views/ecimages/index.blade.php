@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<table class="table text-center mt-5" style="width:50vw;" align="center">
+<table class="table text-center mt-5" style="width:40vw;height:70vh;overflow:scroll;display:block;" align="center">
     <thead>
         <th>id</th>
         <th>place</th>
