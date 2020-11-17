@@ -1,6 +1,10 @@
 @extends('layouts.page')
 <!-- Demo styles -->
-
+<style media="screen">
+  a{
+    display: inline;
+  }
+</style>
 @section('content')
 
 <section class="header">

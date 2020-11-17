@@ -16,7 +16,7 @@ li{
   list-style: none;
 }
 .center{
-  display: block;
+  display: contents;
   margin: 0 auto;
 }
 .width_30{
@@ -61,6 +61,7 @@ li{
 }
 a{
   color: black;
+  display: contents;
 }
 @media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
@@ -152,7 +153,9 @@ only screen and (min-device-pixel-ratio : 1.5){
     margin: 8vh;
   }
   .sns_p{
-    padding-left: 40px;
+    padding-left: 50vw;
+    width: fit-content;
+    transform: translateX(-7vw);
   }
   .emb_p{
     text-align: center;
