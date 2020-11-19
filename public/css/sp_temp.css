@@ -53,6 +53,11 @@ li{
   margin: 10px 0;
 }
 /************************ End *******************************/
+p{
+  padding: 0 10px;
+  margin-bottom: 20px;
+  line-height: 1.5rem;
+}
 .body p{
   font-size: .8rem;
   line-height: .3rem;
@@ -62,6 +67,16 @@ li{
 a{
   color: black;
   display: contents;
+}
+.guide_footer{
+  margin-top: 60px;
+  padding: 0 10px;
+  border-top: solid 1px rgb(50,50,50);
+  padding-top: 40px;
+}
+.guide_footer h4{
+  text-align: left;
+  padding-left: 10px;
 }
 @media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
@@ -195,4 +210,5 @@ only screen and (min-device-pixel-ratio : 1.5){
     text-align: center;
     margin: 6vh 0;
   }
+
 }

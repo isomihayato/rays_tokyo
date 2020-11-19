@@ -7,13 +7,8 @@
 </style>
 @section('content')
 
-<section class="header">
-  <img src="/images/tmp/tokyo_emb.png" alt="emb" class="top_emb">
+@include('commons.header')
 
-  <p class="emb_p">TATTOO STUDIO Ray's TOKYO</p>
-  <p class="emb_p">オフィシャルサイト只今準備中</p>
-  <img src="/images/tmp/kv.jpg" alt="kv" class="kv">
-</section>
 <section class="content">
   <div class="body mt-5">
     <p style="text-align: left;">TATTOO STUDIO Ray's TOKYOは、タトゥー</p>

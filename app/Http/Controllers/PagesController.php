@@ -34,6 +34,14 @@ class PagesController extends Controller
            ]);
         }
   }
+  public function guide()
+  {
+    return view('pages.guide');
+  }
+  public function terms()
+  {
+    return view('pages.terms');
+  }
   public function gallery(Request $request)
   {
     $users = User::where([['existence',true],['role','!=','1'],['role','!=','3']])->get();

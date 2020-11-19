@@ -1,0 +1,120 @@
+.content h1{
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+section .content{
+  padding: 0 10px;
+}
+.content p{
+  font-size: .9rem;
+}
+.content h2{
+  padding: 40px 10px 8px 10px;
+  margin-bottom: 20px;
+  border-bottom: double 3px rgb(230,230,230);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.content h3{
+  border-bottom: double 3px rgb(230,230,230);
+  padding: 50px 10px 8px 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.sub_title{
+  margin: 0 auto;
+  font-weight: bold;
+  text-align: center;
+  width: 61vw;
+}
+
+
+@media screen and (max-device-width:760px) and (min-device-width:310px) and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5){
+  section .content{
+    padding: 0 10px;
+  }
+  .content p{
+    font-size: .9rem;
+  }
+  .content h2{
+    padding: 40px 10px 8px 10px;
+    margin-bottom: 20px;
+    border-bottom: double 3px rgb(230,230,230);
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .content h3{
+    border-bottom: double 3px rgb(230,230,230);
+    padding: 50px 10px 8px 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  .sub_title{
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+    width: 61vw;
+  }
+  .middle_table{
+    font-size: .8rem;
+    border: solid 1px rgb(220,220,220);
+  }
+  .middle_table th{
+    width: 30vw;
+    background: rgb(248,248,250);
+    padding: 10px;
+    font-weight: normal;
+    border: solid 1px rgb(220,220,220);
+  }
+  .guide_map iframe{
+    width: 100vw;
+    height: 70vw;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-device-width:760px){
+  body{
+    background-color: #e6e6e6 !important;
+  }
+  .sub_title p{
+    font-size: 1.2rem;
+    transform: translateX(-30px);
+  }
+  .content h2{
+    padding: 70px 10px 8px 10px;
+  }
+  .paper{
+    width: 918px;
+    padding: 80px 40px;
+    margin: 0 auto;
+    background: rgb(255,255,255);
+    border-left: solid 1px rgb(220,220,220);
+    border-right: solid 1px rgb(220,220,220);
+  }
+  .middle_table{
+    max-width: 100%;
+    width: auto;
+    min-width: 380px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    border: solid 1px rgb(220,220,220);
+    border-collapse: collapse;
+  }
+  .middle_table th{
+    width: 180px;
+    background: rgb(248,248,250);
+    padding: 10px;
+    font-weight: normal;
+    border: solid 1px rgb(220,220,220);
+  }
+  .guide_map iframe{
+    margin-bottom: 40px;
+  }
+  .guide_footer h4{
+    text-align: center !important;
+    margin-bottom: 40px;
+  }
+}
