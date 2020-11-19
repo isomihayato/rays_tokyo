@@ -20,10 +20,10 @@ jobs:
       env:
         APP_ENV: "production"
         APP_DEBUG: "false"
-        APP_URL: "https://testtest0022.uh-oh.jp"
+        APP_URL: "https://raystokyo.com"
     - name: 秘密鍵のコピー
       run: echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: ファイルをサーバに同期
-      run: rsync -rlOtcv --delete --exclude-from=.rsyncignore -e "ssh -i id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ rayscompany@sv2217.xserver.jp:~/productions
+      run: rsync -rlOtcv --delete --exclude-from=.rsyncignore -e "ssh -i id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ rayscompany@sv2217.xserver.jp:~/productions -p 10022
