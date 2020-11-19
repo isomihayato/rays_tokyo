@@ -35,12 +35,6 @@
           ga('send', 'pageview');
         </script>
 
-        <script type="text/javascript" src="/js/tinymce/tinymce.min.js"></script>
-        <script src="/js/onebook/jquery-1.11.0.min.js" charset="utf-8"></script>
-        <script src="/js/onebook/jquery.mousewheel.min.js"></script>
-        <script src="/js/onebook/three.min.js"></script>
-        <script src="/js/onebook/jquery.onebook3d-2.33.js"></script>
-
     </head>
 
     <body>

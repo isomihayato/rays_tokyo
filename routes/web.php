@@ -13,13 +13,13 @@
 
 Route::get('/','PagesController@index');
 Route::get('/index','PagesController@index')->name('pages.index');
-Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
-Route::get('/artists','PagesController@artists')->name('pages.artists');
-Route::get('/show_artist','PagesController@show_artist')->name('pages.show_artist');
-Route::get('/blogs','PagesController@blogs')->name('pages.blogs');
-Route::get('/blogs_month','PagesController@blogs_month')->name('pages.blogs_month');
-Route::get('/blog','PagesController@blog')->name('pages.blog');
-Route::get('/recruit','PagesController@recruit')->name('pages.recruit');
+// Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
+// Route::get('/artists','PagesController@artists')->name('pages.artists');
+// Route::get('/show_artist','PagesController@show_artist')->name('pages.show_artist');
+// Route::get('/blogs','PagesController@blogs')->name('pages.blogs');
+// Route::get('/blogs_month','PagesController@blogs_month')->name('pages.blogs_month');
+// Route::get('/blog','PagesController@blog')->name('pages.blog');
+// Route::get('/recruit','PagesController@recruit')->name('pages.recruit');
 
 
 Route::get('home','ToppagesController@index');
