@@ -19,7 +19,7 @@
     <p>・<b class="fc_red">カウンセリング時に施術費用の一部を予約金としてお預かり致します。</b><br>（即日施術の場合は不要です。）</p>
 
     <h3>Depositの目安</h3>
-    <table class="table-border middle_table" align="center">
+    <table class="middle_table" align="center">
     <tr>
     	<th>500円玉・タバコサイズ</th>
     	<td>10,000円〜</td>
@@ -64,7 +64,7 @@
     <tr>
     	<th> </th>
     	<th>ご予約日に施術予定の方</th>
-    	<th style="width:30vw;">カウンセリングのみご予約の方</th>
+    	<th style="width:20vw;">カウンセリングのみご予約の方</th>
     </tr>
     <tr>
     	<th>7〜3日前</th>

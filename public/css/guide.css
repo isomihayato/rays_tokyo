@@ -60,10 +60,11 @@ only screen and (min-device-pixel-ratio : 1.5){
   }
   .middle_table{
     width: 90vw;
-    font-size: .8rem;
+    font-size: .72rem;
     border: solid 1px rgb(220,220,220);
   }
   .middle_table th{
+    text-align: center;
     width: 30vw;
     background: rgb(248,248,250);
     padding: 10px;
@@ -109,11 +110,13 @@ only screen and (min-device-pixel-ratio : 1.5){
     border-collapse: collapse;
   }
   .middle_table th{
+    text-align: center;
     width: 180px;
     background: rgb(248,248,250);
     padding: 10px;
     font-weight: normal;
     border: solid 1px rgb(220,220,220);
+    font-size: .8rem;
   }
   .middle_table td{
     text-align: center;
