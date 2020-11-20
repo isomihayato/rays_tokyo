@@ -19,7 +19,7 @@
     <p>・<b class="fc_red">カウンセリング時に施術費用の一部を予約金としてお預かり致します。</b><br>（即日施術の場合は不要です。）</p>
 
     <h3>Depositの目安</h3>
-    <table class="table middle_table" align="center">
+    <table class="table-border middle_table" align="center">
     <tr>
     	<th>500円玉・タバコサイズ</th>
     	<td>10,000円〜</td>
@@ -60,7 +60,7 @@
     <p>ご予約の7日前から、キャンセル（変更、取消）は手数料が発生いたしますのでお気を付けください。</p>
     <h3>キャンセル手数料</h3>
 
-    <table class="table middle_table" align="center">
+    <table class="middle_table" align="center">
     <tr>
     	<th> </th>
     	<th>ご予約日に施術予定の方</th>
@@ -87,7 +87,7 @@
 
     <p>
     	ご予約時にお知らせいただいた、デザイン・サイズのご変更をご希望の場合は
-    	<br class="for_pc"><b>必ず事前に、<a href="https://line.me/R/ti/p/gpM4XiuiAe" target="_blank" rel="nofollow noreferrer">LINE</a>にてご連絡ください。</b>
+    	<br class="for_pc"><b>必ず事前に、<a href="https://lin.ee/6yIXkH5" target="_blank" rel="nofollow noreferrer">LINE</a>にてご連絡ください。</b>
     </p>
     <p>
     	1人でも多くのお客様にスムーズにご案内できるようスケジュールを細かく管理しており、
@@ -102,9 +102,8 @@
 
     <h2>アクセス</h2>
     <p>
-    	〒606-8351
-    	<br>京都市左京区岡崎徳成町27-15-2F（受付：1F）
-    	<br>（東大路二条上ル、京都銀行聖護院支店さんの向かい側）
+      〒151-0051
+      <br>東京都渋谷区千駄ヶ谷3-26-7 第12FMGビルB1F
     </p>
     <p>※当日は1Fの受付へお越しください。</p>
 
@@ -165,7 +164,7 @@
       </div>
     </a>
     @include('commons.subpage_footer')
-  </section>  
+  </section>
 </section>
 
 @endsection

@@ -59,6 +59,7 @@ only screen and (min-device-pixel-ratio : 1.5){
     width: 61vw;
   }
   .middle_table{
+    width: 90vw;
     font-size: .8rem;
     border: solid 1px rgb(220,220,220);
   }
@@ -68,6 +69,10 @@ only screen and (min-device-pixel-ratio : 1.5){
     padding: 10px;
     font-weight: normal;
     border: solid 1px rgb(220,220,220);
+  }
+  .middle_table td{
+    text-align: center;
+    border: solid 1px #cecece;
   }
   .guide_map iframe{
     width: 100vw;
@@ -109,6 +114,16 @@ only screen and (min-device-pixel-ratio : 1.5){
     padding: 10px;
     font-weight: normal;
     border: solid 1px rgb(220,220,220);
+  }
+  .middle_table td{
+    text-align: center;
+    border: solid 1px #cecece;
+  }
+  .table {
+    width: auto;
+  }
+  .table td{
+    text-align: center;
   }
   .guide_map iframe{
     margin-bottom: 40px;
