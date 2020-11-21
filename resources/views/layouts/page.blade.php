@@ -2,8 +2,8 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>東京タトゥースタジオTATTOO STUDIO Ray's TOKYO　タトゥー・刺青</title>
-        <meta name="description" content="東京のTATTOOスタジオ、洋彫り、TRIBAL（トライバル）、ホワイトタトゥー、カバーアップ（リメイク）、和彫りなどオールジャンルに対応。徹底した衛生管理と感染症対策を行っております。特にホワイトタトゥーやカバーアップタトゥーは多くのお客様にご支持頂いており日本全国、海外からもご来店頂いてます。東京スタジオには彫師（タトゥーアーティスト）が常に2～3人在籍し、明るくクリーンな空間です。ご予約はLINEやお電話などで承ります。">
+        <title>{{$title}} 東京タトゥースタジオ TATTOO STUDIO Ray's TOKYO　タトゥー・刺青</title>
+        <meta name="description" content="{{$title}}, 東京のTATTOOスタジオ、洋彫り、TRIBAL（トライバル）、ホワイトタトゥー、カバーアップ（リメイク）、和彫りなどオールジャンルに対応。徹底した衛生管理と感染症対策を行っております。特にホワイトタトゥーやカバーアップタトゥーは多くのお客様にご支持頂いており日本全国、海外からもご来店頂いてます。東京スタジオには彫師（タトゥーアーティスト）が常に2～3人在籍し、明るくクリーンな空間です。ご予約はLINEやお電話などで承ります。">
         <meta name="keywords" content="東京,タトゥー,TATTOO,刺青" />
         <meta name="ROBOTS" content="INDEX,FOLLOW" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

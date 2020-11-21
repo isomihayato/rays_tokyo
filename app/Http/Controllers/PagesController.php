@@ -26,21 +26,27 @@ class PagesController extends Controller
               return view('pages.index',[
                 'articles' => $articles,
                 'tattoos' => $tattoos,
+                'title' => '',
               ]);
          } else {
            return view('pages.index',[
              'articles' => $articles,
              'tattoos' => $tattoos,
+             'title' => '',
            ]);
         }
   }
   public function guide()
   {
-    return view('pages.guide');
+    return view('pages.guide',[
+      'title' => 'スタジオ案内',
+    ]);
   }
   public function terms()
   {
-    return view('pages.terms');
+    return view('pages.terms',[
+      'title' => '注意喚起'
+    ]);
   }
   public function gallery(Request $request)
   {
