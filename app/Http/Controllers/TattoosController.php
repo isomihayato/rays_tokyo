@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Http\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 use App\Tattoo;
 use App\User;
+use Storage;
 use DateTime;
 
 
 class TattoosController extends Controller
 {
+  const BRANCHES = ['all'=>'All branch','kyoto'=>'Kyoto','tokyo'=>'Tokyo'];
     public function index(Request $request)
     {
-      // eval(\Psy\sh());
       $current = is_null($request->current) ? now() : new DateTime($request->current);
 
       if (Auth::user()->role > 7)
@@ -41,6 +45,21 @@ class TattoosController extends Controller
       ]);
     }
 
+    public function edit($id)
+    {
+      $tattoo = Tattoo::findOrFail($id);
+      $artists = ['0'=>'選択してください'];
+      foreach(User::where([['existence',true],['role','!=',1],['role','!=',3]])->get() as $user){
+        $artists += array($user->id=>$user->name);
+      }
+      $tattoo->displayed_in = explode(',',$tattoo->displayed_in);
+      return view('tattoos.edit',[
+        'tattoo' => $tattoo,
+        'artists' => $artists,
+        'branches' => self::BRANCHES,
+      ]);
+    }
+
     public function create()
     {
         $tattoo = new Tattoo;
@@ -51,6 +70,7 @@ class TattoosController extends Controller
         return view('tattoos.create',[
           'tattoo' => $tattoo,
           'artists' => $artists,
+          'branches' => self::BRANCHES,
         ]);
     }
 
@@ -58,6 +78,7 @@ class TattoosController extends Controller
     {
         $request->validate([
           'images' => 'required',
+          'displayed_in' => 'required'
         ]);
 
         $tattoos = Tattoo::whereBetween('created_at',[
@@ -69,11 +90,14 @@ class TattoosController extends Controller
 
         foreach($request->images as $image)
         {
-          $path = str_replace('public/', '', $image->store('public'));
+          // ローカルで保存する場合
+          // $path = str_replace('public/', '', $image->store('public'));
+          $path = $this->store_to_s3($image);
 
           $tattoo = User::findOrFail($request->artist)->tattoos()->create([
               'order' => $order,
               'path'  => $path,
+              'displayed_in' => implode(',',$request->displayed_in),
           ]);
           $tattoo->created_at = new DateTime($request->insert_at);
           $tattoo->save();
@@ -124,10 +148,47 @@ class TattoosController extends Controller
         return redirect('tattoos');
     }
 
+    public function update(Request $request,$id)
+    {
+      $request->validate([
+        'displayed_in' =>'required'
+      ]);
+      $tattoo = Tattoo::findOrFail($id);
+      if (is_null($request->image)) {
+        $path = $tattoo->path;
+      }else {
+        $path = Storage::disk('s3')->putFile('upload', $request->image, 'public');
+        $image_path = Storage::disk('s3')->url($path);
+      }
+      $tattoo->user_id      = $request->artist;
+      $tattoo->path         = $path;
+      $tattoo->displayed_in = implode(',',$request->displayed_in);
+      $tattoo->created_at   = new DateTime($request->insert_at);
+      $tattoo->save();
+      return redirect('tattoos');
+    }
+
     public function destroy($id)
     {
         $tattoo = Tattoo::findOrFail($id);
         $tattoo->delete();
         return redirect('tattoos');
     }
+
+    public function store_to_s3($base64){
+      try {
+            list(, $fileData) = explode(';', $base64);
+            list(, $fileData) = explode(',', $fileData);
+            $file = base64_decode($fileData);
+            $fileName = Str::random(150).'.png';
+            $path = 'upload/'.$fileName;
+            Storage::disk('s3')->put($path, $file, 'public');
+
+            return Storage::disk('s3')->url($path);
+
+        } catch (Exception $e) {
+            Log::error($e);
+            return null;
+        }
+      }
 }

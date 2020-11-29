@@ -65,18 +65,29 @@
   <div class="row mt-3 mb-3">
       <div class="col-6">
         {!! Form::label('category', 'Category') !!}
-        {!! Form::select('category',$categories,null) !!}
+        {!! Form::select('category',$categories,$article->category_id) !!}
       </div>
   </div>
   <div class="row mt-3 mb-3">
       <div class="col-6">
         {!! Form::label('thumbnail', 'Thumbnail') !!}
         {!! Form::file('thumbnail') !!}
-        <img src="/storage/{{$article->thumbnail}}" width="100" height="100" alt="">
+        <img src="{{$article->thumbnail}}" width="100" height="100" alt="">
       </div>
   </div>
         {!! Form::label('body','Body') !!}
         {!! Form::textarea('body',null,['name'=>'editor','height'=>'700']) !!}
+
+  <div class="row mt-3 mb-3">
+    <div class="col-6">
+      {!! Form::label('displayed_in', 'KYOTO') !!}
+      {!! Form::checkbox('displayed_in[]', 'kyoto', true) !!}
+      {!! Form::label('displayed_in', 'TOKYO') !!}
+      {!! Form::checkbox('displayed_in[]', 'tokyo',true) !!}
+      {!! Form::label('displayed_in', 'TAIPEI') !!}
+      {!! Form::checkbox('displayed_in[]', 'taipei',true) !!}
+    </div>
+  </div>
   <div class="row mt-3 mb-3">
       <div class="col-6">
         {!! Form::label('release_at', 'Release') !!}

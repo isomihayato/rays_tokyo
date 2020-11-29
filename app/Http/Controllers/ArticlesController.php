@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Article;
 use App\User;
 use App\Category;
+use Storage;
 
 class ArticlesController extends Controller
 {
@@ -64,11 +65,13 @@ class ArticlesController extends Controller
       $request->validate([
         'thumbnail' =>'required'
       ]);
-      $path = str_replace('public/','',$request->thumbnail->store('public'));
+      $path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
+      $image_path = Storage::disk('s3')->url($path);
       $article = User::findOrFail(Auth::id())->articles()->create([
         'title' => $request->title,
-        'thumbnail' => $path,
+        'thumbnail' => $image_path,
         'body' => $request->editor,
+        'displayed_in' => implode(',',$request->displayed_in),
         'release_at' => $request->release_at,
         'category_id' => $request->category
       ]);
@@ -82,13 +85,15 @@ class ArticlesController extends Controller
       if (is_null($request->thumbnail)) {
         $path = $article->thumbnail;
       }else {
-        $path = str_replace('public/','',$request->thumbnail->store('public'));
+        $path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
+        $image_path = Storage::disk('s3')->url($path);
       }
 
       $article->title         = $request->title;
       $article->category_id   = $request->category;
-      $article->thumbnail     = $path;
+      $article->thumbnail     = $image_path;
       $article->body          = $request->editor;
+      $article->displayed_in  = implode(',',$request->displayed_in);
       $article->release_at    = $request->release_at;
       $article->save();
       return redirect('articles');
@@ -131,7 +136,8 @@ class ArticlesController extends Controller
 
     public function postAccess(Request $request)
     {
-      $imgpath = $request->file('file')->store('mce_upload', 'public');
-      return json_encode(['location' => '/storage/'.$imgpath]);
+      $path = Storage::disk('s3')->putFile('upload', $request->file('file'), 'public');
+      $image_path = Storage::disk('s3')->url($path);
+      return json_encode(['location' => $image_path]);
     }
 }

@@ -54,17 +54,9 @@ class PagesController extends Controller
     foreach ($users as $user) {
       $user->setRelation('tattoos', $user->tattoos()->paginate(10,['*'],strtolower($user->name)) );
     }
-    if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-            || (strpos($request->header('User-Agent'), 'iPod') !== false)
-            || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-              return view('pages.gallery',[
-                'users' => $users,
-              ]);
-        } else {
-          return view('pages.pc.gallery',[
+          return view('pages.gallery',[
             'users' => $users,
           ]);
-        }
   }
   public function artists(Request $request)
   {

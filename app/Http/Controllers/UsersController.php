@@ -21,6 +21,8 @@ class UsersController extends Controller
     {
       $user = User::findOrFail($id);
 
+      $user->belongs_to = explode(',',$user->belongs_to);
+
       return view('users.edit',[
         'user' => $user,
         'authes' => self::AUTH_TYPES,
@@ -43,12 +45,14 @@ class UsersController extends Controller
         'name' => 'required|max:255',
         'role' => 'required|max:16',
         'login_id' => 'required',
+        'belongs_to' => 'required',
         'password' => 'required',
       ]);
       $user = new User;
       $user->name = $request->name;
       $user->role = $request->role;
       $user->login_id = $request->login_id;
+      $user->belongs_to = implode(',',$request->belongs_to);
       $user->password = Hash::make($request->password);
       $user->save();
       return redirect('users');
@@ -59,11 +63,15 @@ class UsersController extends Controller
       $request->validate([
         'name' => 'required|max:255',
         'role' => 'required|max:16',
+        'login_id' => 'required',
+        'belongs_to' => 'required',
         'password' => 'required',
       ]);
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->role = $request->role;
+      $user->login_id = $request->login_id;
+      $user->belongs_to = implode(',',$request->belongs_to);
       $user->password = Hash::make($request->password);
       $user->save();
       return redirect('users');

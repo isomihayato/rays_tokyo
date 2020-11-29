@@ -25,6 +25,19 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('belongs_to', 'Belongs:') !!}
+                <!-- blockが欲しかっただけ -->
+                <div class=""></div>
+                <!-- End -->
+                {!! Form::label('belongs_to', 'KYOTO') !!}
+                {!! Form::checkbox('belongs_to[]', 'kyoto', null) !!}
+                {!! Form::label('belongs_to', 'TOKYO') !!}
+                {!! Form::checkbox('belongs_to[]', 'tokyo',null) !!}
+                {!! Form::label('belongs_to', 'TAIPEI') !!}
+                {!! Form::checkbox('belongs_to[]', 'taipei',null) !!}
+            </div>
+
+            <div class="form-group">
                 {!! Form::label('password', 'Password') !!}
                 {!! Form::password('password', ['class' => 'form-control']) !!}
             </div>
