@@ -15,10 +15,10 @@ class ArticlesController extends Controller
     {
         if (Auth::user()->role > 7)
         {
-          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->all();
+          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->get();
         }else
         {
-          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp'],['user_id','=',Auth::id()]])->orderBy('id', 'desc')->all();
+          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp'],['user_id','=',Auth::id()]])->orderBy('id', 'desc')->get();
         }
 
         return view('articles.index',[
