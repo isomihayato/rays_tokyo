@@ -18,7 +18,7 @@
     <h3>Articles</h3>
   </div>
 </div>
-
+{{dd($articles)}}
 <div style="width:60vw;height:70vh;overflow:scroll;display:block;margin:0 auto;">
   <table class="table table-striped text-center">
     <thead>
