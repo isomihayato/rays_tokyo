@@ -13,12 +13,12 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        if (Auth::user()->role > 7)
+        if (Auth::user()->role < 7)
         {
-          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->get();
+          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->paginate(25);
         }else
         {
-          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp'],['user_id','=',Auth::id()]])->orderBy('id', 'desc')->get();
+          $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp'],['user_id','=',Auth::id()]])->orderBy('id', 'desc')->paginate(25);
         }
 
         return view('articles.index',[
