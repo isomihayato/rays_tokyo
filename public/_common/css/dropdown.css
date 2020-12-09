@@ -1,0 +1,55 @@
+#mdropmenu{
+     font-size:18px;
+     width:95%;
+     max-width:500px;
+     list-style-type: none;
+     border:1px solid #585858;
+     border-top:0;
+   }
+     #mdropmenu a {
+     text-decoration: none;
+    }
+    #mdropmenu i{
+     font-size:30px;
+    }
+    #mdropmenu li{
+     border-top:1px solid #585858;
+    }
+    #mdropmenu li ul{
+     display:none;
+     list-style-type: none;
+    }
+    #mdropmenu table{
+     width:100%;
+     min-height:50px;
+     margin:0;
+     padding:0;
+     border:0;
+    }
+    .mlist-left{
+     width:80%;
+     padding:5px;
+     vertical-align:middle;
+    }
+    .mlist-right{
+     vertical-align: middle;
+     text-align: center;
+     padding: 5px;
+    }
+    .mlist-full{
+     width: 100%;
+     padding: 5px;
+     vertical-align: middle;
+    }
+    .mleft-second , .mright-second{
+     background-color:#F2F2F2;
+    }
+    .mleft-third , .mright-third{
+     background-color: #D8D8D8;
+    }
+    .mleft-second{
+     padding-left: 10px;
+    }
+    .mleft-third{
+     padding-left: 15px;
+    }

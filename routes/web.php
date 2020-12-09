@@ -17,6 +17,7 @@ Route::get('/guide','PagesController@guide')->name('pages.guide');
 Route::get('/terms','PagesController@terms')->name('pages.terms');
 Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
 Route::get('/artists','PagesController@artists')->name('pages.artists');
+Route::get('/artists','PagesController@artists')->name('pages.artists');
 Route::get('/show_artist','PagesController@show_artist')->name('pages.show_artist');
 Route::get('/blogs','PagesController@blogs')->name('pages.blogs');
 Route::get('/blogs_month','PagesController@blogs_month')->name('pages.blogs_month');

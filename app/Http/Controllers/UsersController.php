@@ -21,7 +21,7 @@ class UsersController extends Controller
     {
       $user = User::findOrFail($id);
 
-      $user->belongs_to = explode(',',$user->belongs_to);
+      $user->belongs_to = array_pad(explode(',',$user->belongs_to),3,'');
 
       return view('users.edit',[
         'user' => $user,

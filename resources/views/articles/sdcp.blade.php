@@ -62,6 +62,7 @@
       <div class="col-6">
         {!! Form::hidden('title','sdcp') !!}
         {!! Form::hidden('category',$article->category_id) !!}
+        {!! Form::hidden('displayed_in',$article->displayed_in) !!}
         {!! Form::hidden('release_at',$article->release_at) !!}
         {!! Form::submit('Upload') !!}
       </div>

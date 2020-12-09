@@ -34,7 +34,11 @@
       <tr>
           <td style="vertical-align:middle;">{{ link_to_route('articles.edit',$article->id,['article'=>$article->id]) }}</td>
           <td style="vertical-align:middle;">
+            @isset($article->thumbnail)
               <img src="{{ $article->thumbnail }}" width="100" height="100" alt="">
+            @else
+              <div style="width:100px;height:100px;"></div>
+            @endisset
           </td>
           <td style="vertical-align:middle;">{{$article->title}}</td>
           <td style="vertical-align:middle;">

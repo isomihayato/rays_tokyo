@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 use App\Ecimage;
 use App\User;
+use Storage;
 
 class EcimagesController extends Controller
 {
@@ -56,7 +59,8 @@ class EcimagesController extends Controller
   public function store(Request $request)
   {
     foreach ($request->images as $image) {
-      $path = str_replace('public/','',$image->store('public'));
+      $image_path = Storage::disk('s3')->putFile('upload', $image, 'public');
+      $path = Storage::disk('s3')->url($image_path);
 
       $ecimage = User::findOrFail($request->artist)->ecimages()->create([
         'place' => $request->place,
@@ -75,7 +79,8 @@ class EcimagesController extends Controller
       $ecimage->user_id = $request->artist;
       $ecimage->save();
     }else {
-      $path = str_replace('public/','',$request->image->store('public'));
+      $image_path = Storage::disk('s3')->putFile('upload', $request->image, 'public');
+      $path = Storage::disk('s3')->url($path);
       $ecimage = Ecimage::findOrFail($id);
       $ecimage->place = $request->place;
       $ecimage->path  = $path;

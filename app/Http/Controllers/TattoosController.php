@@ -20,7 +20,7 @@ class TattoosController extends Controller
     {
       $current = is_null($request->current) ? now() : new DateTime($request->current);
 
-      if (Auth::user()->role > 7)
+      if (Auth::user()->role < 7)
       {// >manager?
         $tattoos = Tattoo::whereBetween('created_at',[
           $current->modify("first day of this month")->format('Y-m-d'),
@@ -60,18 +60,28 @@ class TattoosController extends Controller
       ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $tattoo = new Tattoo;
         $artists = ['0'=>'選択してください'];
         foreach(User::where([['existence',true],['role','!=',1],['role','!=',3]])->get() as $user){
           $artists += array($user->id=>$user->name);
         }
-        return view('tattoos.create',[
-          'tattoo' => $tattoo,
-          'artists' => $artists,
-          'branches' => self::BRANCHES,
-        ]);
+        if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
+                || (strpos($request->header('User-Agent'), 'iPod') !== false)
+                || (strpos($request->header('User-Agent'), 'Android') !== false)) {
+            return view('tattoos.create_sp',[
+              'tattoo' => $tattoo,
+              'artists' => $artists,
+              'branches' => self::BRANCHES,
+            ]);
+        }else{
+          return view('tattoos.create',[
+            'tattoo' => $tattoo,
+            'artists' => $artists,
+            'branches' => self::BRANCHES,
+          ]);
+        }
     }
 
     public function store(Request $request)
@@ -145,7 +155,9 @@ class TattoosController extends Controller
             // code...
             break;
         }
-        return redirect('tattoos');
+        return redirect(route('tattoos.index',[
+          'current' => $request->current
+        ]));
     }
 
     public function update(Request $request,$id)
@@ -168,11 +180,13 @@ class TattoosController extends Controller
       return redirect('tattoos');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $tattoo = Tattoo::findOrFail($id);
         $tattoo->delete();
-        return redirect('tattoos');
+        return redirect(route('tattoos.index',[
+          'current' => $request->current
+        ]));
     }
 
     public function store_to_s3($base64){

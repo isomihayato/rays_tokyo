@@ -50,28 +50,23 @@ class PagesController extends Controller
   }
   public function gallery(Request $request)
   {
-    $users = User::where([['existence',true],['role','!=','1'],['role','!=','3']])->get();
+    $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3']])->get();
     foreach ($users as $user) {
-      $user->setRelation('tattoos', $user->tattoos()->paginate(10,['*'],strtolower($user->name)) );
+      $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%kyoto%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)) );
     }
-          return view('pages.gallery',[
-            'users' => $users,
-          ]);
+      return view('pages.gallery',[
+        'users' => $users,
+      ]);
   }
   public function artists(Request $request)
   {
-    $artists = User::where([['existence',true],['role','!=','1'],['role','!=','3']])->get();
+    $artists = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3'],['login_id','!=','white'],['login_id','!=','other']])->get();
 
-    if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-            || (strpos($request->header('User-Agent'), 'iPod') !== false)
-            || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-              return view('pages.artists',[
-                'artists' => $artists,
-              ]);
-        } else {
-            return 'pc';
-        }
+    return view('pages.artists',[
+      'artists' => $artists,
+    ]);
   }
+
   public function show_artist(Request $request)
   {
     $artist = User::findOrFail($request->artist);

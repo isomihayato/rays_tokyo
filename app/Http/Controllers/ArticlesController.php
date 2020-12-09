@@ -62,11 +62,12 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
-      $request->validate([
-        'thumbnail' =>'required'
-      ]);
-      $path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
-      $image_path = Storage::disk('s3')->url($path);
+      if (!is_null($request->thumbnail)) {
+        $path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
+        $image_path = Storage::disk('s3')->url($path);
+      }else {
+        $image_path = null;
+      }
       $article = User::findOrFail(Auth::id())->articles()->create([
         'title' => $request->title,
         'thumbnail' => $image_path,
@@ -82,18 +83,22 @@ class ArticlesController extends Controller
     public function update(Request $request,$id)
     {
       $article = Article::findOrFail($id);
+      if (gettype($request->displayed_in) == "string") {
+        $displayed_in = $request->displayed_in;
+      }else {
+        $displayed_in = implode(',',$request->displayed_in);
+      }
       if (is_null($request->thumbnail)) {
         $path = $article->thumbnail;
       }else {
-        $path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
-        $image_path = Storage::disk('s3')->url($path);
+        $image_path = Storage::disk('s3')->putFile('upload', $request->thumbnail, 'public');
+        $path = Storage::disk('s3')->url($path);
       }
-
       $article->title         = $request->title;
       $article->category_id   = $request->category;
-      $article->thumbnail     = $image_path;
+      $article->thumbnail     = $path;
       $article->body          = $request->editor;
-      $article->displayed_in  = implode(',',$request->displayed_in);
+      $article->displayed_in  = $displayed_in;
       $article->release_at    = $request->release_at;
       $article->save();
       return redirect('articles');
