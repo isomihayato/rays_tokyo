@@ -34,7 +34,7 @@ class ArticlesController extends Controller
       foreach ($cates as $category) {
         $categories[$category->id] =  $category->title;
       }
-
+      $article->displayed_in = array_pad(explode(',',$article->displayed_in),3,'');
       return view('articles.edit',[
         'article' => $article,
         'categories' => $categories,

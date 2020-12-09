@@ -52,7 +52,7 @@ class PagesController extends Controller
   {
     $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3']])->get();
     foreach ($users as $user) {
-      $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%kyoto%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)) );
+      $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%tokyo%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)) );
     }
       return view('pages.gallery',[
         'users' => $users,
@@ -70,7 +70,7 @@ class PagesController extends Controller
   public function show_artist(Request $request)
   {
     $artist = User::findOrFail($request->artist);
-    $artist->setRelation('tattoos',$artist->tattoos()->paginate(10)->appends(["artist" => $artist->id])->appends("#gallery"));
+    $artist->setRelation('tattoos',$artist->tattoos()->where([['displayed_in','like','%tokyo%']])->paginate(10)->appends(["artist" => $artist->id])->appends("#gallery"));
 
     if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
             || (strpos($request->header('User-Agent'), 'iPod') !== false)

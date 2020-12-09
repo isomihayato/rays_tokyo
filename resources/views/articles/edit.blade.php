@@ -81,11 +81,11 @@
   <div class="row mt-3 mb-3">
     <div class="col-6">
       {!! Form::label('displayed_in', 'KYOTO') !!}
-      {!! Form::checkbox('displayed_in[]', 'kyoto', true) !!}
+      {!! Form::checkbox('displayed_in[]', 'kyoto') !!}
       {!! Form::label('displayed_in', 'TOKYO') !!}
-      {!! Form::checkbox('displayed_in[]', 'tokyo',true) !!}
+      {!! Form::checkbox('displayed_in[]', 'tokyo') !!}
       {!! Form::label('displayed_in', 'TAIPEI') !!}
-      {!! Form::checkbox('displayed_in[]', 'taipei',true) !!}
+      {!! Form::checkbox('displayed_in[]', 'taipei') !!}
     </div>
   </div>
   <div class="row mt-3 mb-3">
