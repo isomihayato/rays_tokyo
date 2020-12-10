@@ -1,6 +1,5 @@
 <?php
 echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";
-$webroot = $_SERVER['DOCUMENT_ROOT'];
 include("./_common/tag/top.html");
 $page_title = "Tattoo Sample Gallery ";
 ?>

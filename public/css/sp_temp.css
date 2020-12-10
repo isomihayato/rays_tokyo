@@ -46,11 +46,12 @@ li{
   margin: 40px 0;
 }
 .btn_box{
+  display: block;
   background-color: #cccccc;
   font-size: 1.5rem;
   text-align: center;
   padding: 12px 0;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 /************************ End *******************************/
 p{

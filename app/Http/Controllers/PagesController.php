@@ -67,20 +67,14 @@ class PagesController extends Controller
     ]);
   }
 
-  public function show_artist(Request $request)
+  public function show_artist($id)
   {
-    $artist = User::findOrFail($request->artist);
-    $artist->setRelation('tattoos',$artist->tattoos()->where([['displayed_in','like','%tokyo%']])->paginate(10)->appends(["artist" => $artist->id])->appends("#gallery"));
+    $artist = User::findOrFail($id);
+    $artist->setRelation('tattoos',$artist->tattoos()->where([['displayed_in','like',"%tokyo%"]])->orderBy('id','desc')->paginate(8)->appends(["artist" => $artist->id]));
 
-    if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-            || (strpos($request->header('User-Agent'), 'iPod') !== false)
-            || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-              return view('pages.show_artist',[
-                'artist' => $artist,
-              ]);
-        } else {
-            return 'pc';
-        }
+    return view('pages.show_artist',[
+      'artist' => $artist,
+    ]);
   }
   public function blogs(Request $request)
   {

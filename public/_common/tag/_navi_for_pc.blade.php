@@ -1,26 +1,28 @@
 <nav>
 	<?php
-	$nav_users = App\User::where([['existence',true],['belongs_to','like',"%kyoto%"],['role','!=',1],['role','!=',3]])->get();
-	$nav_artists = App\User::where([['existence',true],['belongs_to','like',"%kyoto%"],['role','!=','1'],['role','!=','3'],['login_id','!=','white'],['login_id','!=','other']])->get();
+	$nav_users = App\User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['role','!=',3]])->get();
+	$nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3'],['login_id','!=','white'],['login_id','!=','other']])->get();
 	?>
 	<div id="fixedBox" class="for_pc">
 		<div class="area_navi">
 			<ul id="nav">
 				<li><a href="/"><span class="nav_01" title="ホーム"></span></a></li>
-				<li><a><span class="nav_02" title="システム"></span></a>
+				<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">SYSTEM</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
+				<!-- <li><a><span class="nav_02" title="システム"></span></a>
 					<ul style="z-index:9999;">
 						<li><a href="/precaution_sanitation"><span class="sub_02_01" title="諸注意・衛生面"></span></a></li>
 						<li><a href="/price"><span class="sub_02_02" title="施術料金"></span></a></li>
 						<li><a href="/flow"><span class="sub_02_03" title="ご予約の流れ"></span></a></li>
 						<li><a href="/faq"><span class="sub_02_04" title="Q&nbsp;&amp;&nbsp;A"></span></a></li>
 					</ul>
-				</li>
-				<li><a href="/special_tattoo"><span class="nav_03" title="タトゥー"></span></a>
+				</li> -->
+				<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">Special Tattoo</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
+				<!-- <li><a href="/special_tattoo"><span class="nav_03" title="タトゥー"></span></a>
 					<ul>
 						<li><a href="/white_tattoo"><span class="sub_03_01" title="ホワイトタトゥー"></span></a></li>
 						<li><a href="/cover_up"><span class="sub_03_02" title="カバーアップ"></span></a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li><a href="/gallery"><span class="nav_04" title="タトゥーギャラリー"></span></a>
 					<ul style="z-index:9999;">
 						<?php foreach ($nav_users as $user):
@@ -46,7 +48,10 @@
 					<?php endforeach; ?>
 			</ul>
 		</li>
-		<li><a href="/aboutus"><span class="nav_06" title="コンセプト"></span></a>
+		<li style="margin-top:16px;"> <p style="margin:0;">ABOUT US</p> <span style="display: block;
+	font-size: 13px;
+	text-align: center;">coming soon</span></li>
+		<!-- <li><a href="/aboutus"><span class="nav_06" title="コンセプト"></span></a>
 			<ul style="z-index:9999;">
 				<li><a href="/#pickup_04">
 					<span class="en">RAYS<br>(Silver & Apparel)</span>
@@ -70,11 +75,13 @@
 				<li><a href="/movie">
 					<span class="en">YouTube channel</span>
 					<span class="ja">YouTubeチャンネル</span>
-				</a></li>
+				</a></li> -->
 
-			</ul>
-		</li>
-		<li><a href="/contact"><span class="nav_07" title="お問い合わせ"></span></a></li>
+			<!-- </ul> -->
+		<!-- </li> -->
+		<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">CONTACT</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
+
+		<!-- <li><a href="/contact"><span class="nav_07" title="お問い合わせ"></span></a></li> -->
 	</ul>
 </div>
 </div>

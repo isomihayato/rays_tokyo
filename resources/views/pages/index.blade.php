@@ -9,6 +9,12 @@
 
 @include('commons.header')
 
+<?php
+  $page_title = "";
+  include("./_common/tag/meta_fix.html");
+  include("./_common/tag/meta.html");
+  include("./_common/tag/_navi_for_pc.blade.php");
+?>
 <section class="content">
   <div class="body mt-5">
     <p style="text-align: left;">TATTOO STUDIO Ray's TOKYOは、タトゥー</p>
