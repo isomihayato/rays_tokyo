@@ -15,6 +15,9 @@
   include("./_common/tag/meta.html");
   include("./_common/tag/_navi_for_pc.blade.php");
 ?>
+<header style="min-height: 120px;">
+    <div class="for_sp menu_reset"><img src="/_common/image/btn_menu.png" data-uk-offcanvas="{target:'#gMenu'}" alt="MENU" width="50" class="for_sp"></div>
+</header>
 <section class="content">
   <div class="body mt-5">
     <p style="text-align: left;">TATTOO STUDIO Ray's TOKYOは、タトゥー</p>
@@ -116,6 +119,7 @@
         </a>
       </li>
     </ul>
+
 <!--
     <img src="/images/tmp/sdcp.png" class="sdcp center mt-5 mb-5">
     <img src="/images/tmp/footer_emb.png" alt="" class="footer_emb">
@@ -132,4 +136,11 @@
     <hr>
     <div class="copyright">©TATTOO STUDIO Ray's All Rights Reserved.</div> -->
 </section>
+<?php
+include("./_common/tag/_footer.blade.php");
+include("./_common/tag/script.html");
+?>
+<script src="/_common/js/photoswipe/photoswipe.min.js"></script>
+<script src="/_common/js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="/_common/js/gallery.js"></script>
 @endsection
