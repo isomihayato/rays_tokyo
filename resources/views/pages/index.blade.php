@@ -15,7 +15,7 @@
   include("./_common/tag/meta.html");
   include("./_common/tag/_navi_for_pc.blade.php");
 ?>
-<header style="min-height: 120px;">
+<header>
     <div class="for_sp menu_reset"><img src="/_common/image/btn_menu.png" data-uk-offcanvas="{target:'#gMenu'}" alt="MENU" width="50" class="for_sp"></div>
 </header>
 <section class="content">
