@@ -1,7 +1,7 @@
 <?php
 echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";
 include("./_common/tag/top.html");
-$page_title = "Tattoo Sample Gallery ";
+$page_title = "Tattoo Sample Gallery ".$now_artist.' '.$now_page;
 ?>
 <head>
 

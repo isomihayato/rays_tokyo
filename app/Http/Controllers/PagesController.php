@@ -54,8 +54,19 @@ class PagesController extends Controller
     foreach ($users as $user) {
       $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%tokyo%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)) );
     }
+    $url = url()->full();
+    if (strpos($url,'=') != 0) {
+      $now_artist = substr($url,strpos($url,'?')+1,strpos($url,'=')-strpos($url,'?')-1);
+      $now_page = substr($url, strpos($url,'=')+1,strpos($url,'='));
+    }else {
+      $now_artist = '';
+      $now_page = '';
+    }
+
       return view('pages.gallery',[
         'users' => $users,
+        'now_artist' => $now_artist,
+        'now_page' => $now_page
       ]);
   }
   public function artists(Request $request)

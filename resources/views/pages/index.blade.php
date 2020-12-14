@@ -140,7 +140,5 @@
 include("./_common/tag/_footer.blade.php");
 include("./_common/tag/script.html");
 ?>
-<script src="/_common/js/photoswipe/photoswipe.min.js"></script>
-<script src="/_common/js/photoswipe/photoswipe-ui-default.min.js"></script>
-<script src="/_common/js/gallery.js"></script>
+
 @endsection
