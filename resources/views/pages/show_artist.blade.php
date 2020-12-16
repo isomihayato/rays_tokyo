@@ -109,8 +109,8 @@ a:link, a:visited, a:hover, a:active {
 
 <h3 class="main_tit">Biography</h3>
 <div class="center inst">
-	<a href="https://www.instagram.com/rays.{{strtolower(explode(" ",$artist->name)[0])}}/" target="_blank" rel="nofollow noreferrer" class="hoverImg">
-		＠rays.{{strtolower(explode(" ",$artist->name)[0])}}
+	<a href="https://www.instagram.com/rays{{$artist->insta_id}}" target="_blank" rel="nofollow noreferrer" class="hoverImg">
+		＠rays{{$artist->insta_id}}
 	</a>
 </div>
 

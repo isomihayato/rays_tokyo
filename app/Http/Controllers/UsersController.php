@@ -52,6 +52,7 @@ class UsersController extends Controller
       $user->name = $request->name;
       $user->role = $request->role;
       $user->login_id = $request->login_id;
+      $user->insta_id = '';
       $user->belongs_to = implode(',',$request->belongs_to);
       $user->password = Hash::make($request->password);
       $user->save();
@@ -71,6 +72,7 @@ class UsersController extends Controller
       $user->name = $request->name;
       $user->role = $request->role;
       $user->login_id = $request->login_id;
+      $user->insta_id = $request->insta_id;
       $user->belongs_to = implode(',',$request->belongs_to);
       $user->password = Hash::make($request->password);
       $user->save();

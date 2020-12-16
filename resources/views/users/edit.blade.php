@@ -24,6 +24,11 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('insta_id', 'Instagram') !!}
+                    {!! Form::text('insta_id', old('insta_id'), ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('belongs_to', 'Belongs:') !!}
                     <!-- blockが欲しかっただけ -->
                     <div class=""></div>
