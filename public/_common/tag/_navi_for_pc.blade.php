@@ -7,15 +7,14 @@
 		<div class="area_navi">
 			<ul id="nav">
 				<li><a href="/"><span class="nav_01" title="ホーム"></span></a></li>
-				<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">SYSTEM</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
-				<!-- <li><a><span class="nav_02" title="システム"></span></a>
+				<li><a><span class="nav_02" title="システム"></span></a>
 					<ul style="z-index:9999;">
-						<li><a href="/precaution_sanitation"><span class="sub_02_01" title="諸注意・衛生面"></span></a></li>
+						<!-- <li><a href="/precaution_sanitation"><span class="sub_02_01" title="諸注意・衛生面"></span></a></li> -->
 						<li><a href="/price"><span class="sub_02_02" title="施術料金"></span></a></li>
-						<li><a href="/flow"><span class="sub_02_03" title="ご予約の流れ"></span></a></li>
-						<li><a href="/faq"><span class="sub_02_04" title="Q&nbsp;&amp;&nbsp;A"></span></a></li>
+						<!-- <li><a href="/flow"><span class="sub_02_03" title="ご予約の流れ"></span></a></li> -->
+						<!-- <li><a href="/faq"><span class="sub_02_04" title="Q&nbsp;&amp;&nbsp;A"></span></a></li> -->
 					</ul>
-				</li> -->
+				</li>
 				<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">Special Tattoo</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
 				<!-- <li><a href="/special_tattoo"><span class="nav_03" title="タトゥー"></span></a>
 					<ul>

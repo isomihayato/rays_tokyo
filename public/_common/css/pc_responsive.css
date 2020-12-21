@@ -70,7 +70,7 @@ ul.contact_btn li:hover { background-color:rgb(190,190,190); transition:backgrou
 .contact_line { width:218px; height:40px; background-image:url(/_common/image/top/txt_04.png); background-size:218px; background-position:center center; background-repeat:no-repeat; }
 .contact_mail { width:218px; height:40px; background-image:url(/_common/image/top/txt_05.png); background-size:218px; background-position:center center; background-repeat:no-repeat; }
 
-ul.area_sns_bnr { overflow:hidden; width:870px; margin:60px auto;  }
+ul.area_sns_bnr { overflow:hidden; width: 590px; margin:60px auto;  }
 ul.area_sns_bnr a li  { float:left; }
 ul.area_sns_bnr a li img { width:308px; height:78px; margin-right:10px; transition:0.2s; }
 ul.area_sns_bnr a li img:hover { opacity:0.6; }
@@ -140,7 +140,7 @@ ul.common_hdr_nav a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 ul.common_hdr_nav_02 { overflow:hidden; width:1250px; height:50px; margin:0px auto; }
 ul.common_hdr_nav_02:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
-ul.common_hdr_nav_02 li { float:right; width:524px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:10px 9px; background-repeat:no-repeat; background-position:146px 12px; font-size:14px; text-align:center; transition:background-color 0.2s; }
+ul.common_hdr_nav_02 li { float:right; width:257px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:10px 9px; background-repeat:no-repeat; background-position:230px 12px; font-size:14px; text-align:center; transition:background-color 0.2s; }
 ul.common_hdr_nav_02 li:hover { background-color:rgb(180,180,180); }
 ul.common_hdr_nav_02 a li { color:rgb(26,26,26); text-decoration:none; }
 ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }

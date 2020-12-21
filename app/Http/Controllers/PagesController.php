@@ -48,6 +48,10 @@ class PagesController extends Controller
       'title' => '注意喚起'
     ]);
   }
+  public function price()
+  {
+    return view('pages.price');
+  }
   public function gallery(Request $request)
   {
     $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3']])->get();

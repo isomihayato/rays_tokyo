@@ -79,7 +79,7 @@ ul.common_hdr_nav a li { display:inline-block; color:rgb(26,26,26); text-decorat
 ul.common_hdr_nav a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 ul.common_hdr_nav_02{ width:100%; height:30px; margin:0px auto; padding-top:40px; text-align:center; }
-ul.common_hdr_nav_02 a li { display:inline-block; color:rgb(26,26,26); text-decoration:none; width:310px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:12px 10px; background-repeat:no-repeat; background-position:75px 12px; font-size:14px; text-align:center; }
+ul.common_hdr_nav_02 a li { display:inline-block; color:rgb(26,26,26); text-decoration:none; width: 152px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:12px 10px; background-repeat:no-repeat; background-position:125px 12px; font-size:14px; text-align:center; }
 ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 .back_home_logo {
