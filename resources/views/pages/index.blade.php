@@ -1,8 +1,14 @@
 @extends('layouts.page')
 <!-- Demo styles -->
 <style media="screen">
+  ul.common_hdr_nav_02, ul.common_hdr_nav{
+    display: inline-table;
+  }
   a{
     display: inline;
+  }
+  .back_home_logo{
+    display: none;
   }
 </style>
 <?php
