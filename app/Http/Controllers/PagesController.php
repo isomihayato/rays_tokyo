@@ -134,6 +134,10 @@ class PagesController extends Controller
               return 'pc';
           }
   }
+  public function contact()
+  {
+    return view('pages.contact');
+  }
   public function blog(Request $request)
   {
     $article = Article::findOrFail($request->article);

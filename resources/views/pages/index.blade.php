@@ -5,6 +5,9 @@
     display: inline;
   }
 </style>
+<?php
+	include("./_common/tag/_header.html");
+?>
 @section('content')
 
 @include('commons.header')
@@ -47,14 +50,17 @@
   </div>
   <hr>
 
-
-  <h4>TATTOO STUDIO Ray’s TOKYO</h4>
+  <h4 id="pickup_05">TATTOO STUDIO Ray’s TOKYO</h4>
   <p class="address">〒151-0051 <br>東京都渋谷区千駄ヶ谷3-26-7 第12FMGビルB1F</p>
   <a href="https://goo.gl/maps/9UrbSRFEazBY94LRA" class="center">
-    <div class="btn_box width_30 mb-5" style="font-size:.8rem; margin:0 auto;">
+    <div class="btn_box width_30 mb-3" style="font-size:.8rem; margin:0 auto;">
       ＞ Google Map
     </div>
   </a>
+  <p>【電車でお越しの方】</p>
+  <p class="mb-5">副都心線「北参道駅」徒歩3分 <br>
+  総武中央線「千駄ヶ谷駅」徒歩8分</p>
+
   <a href="https://lin.ee/6yIXkH5" class="mt-5">
     <p class="sns_p">
         LINE&nbsp;&nbsp;@tattoorays.tokyo

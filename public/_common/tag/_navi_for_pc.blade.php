@@ -78,9 +78,9 @@
 
 			<!-- </ul> -->
 		<!-- </li> -->
-		<li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">CONTACT</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>
+		<!-- <li style="margin-top:16px;margin-left: 50px;margin-right: 50px;"> <p style="margin:0;">CONTACT</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li> -->
 
-		<!-- <li><a href="/contact"><span class="nav_07" title="お問い合わせ"></span></a></li> -->
+		<li><a href="/contact"><span class="nav_07" title="お問い合わせ"></span></a></li>
 	</ul>
 </div>
 </div>
