@@ -21,6 +21,8 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%
     <div id="gMenuInner" class="uk-offcanvas-bar clearfix">
         <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
         	<li><a href="/">&#9632;&nbsp;HOME</a></li>
+          <li>&#9632;&nbsp;SYSTEM</li>
+          <li><a href="/price">・Price</a></li>
         	<li><a class="main_item">&#9632;&nbsp;GALLERY&emsp;ギャラリー</a></li>
         	<li><a href="/gallery" class="sub_item">Gallery</a></li>
 					<?php foreach($nav_users as $user): ?>
