@@ -49,10 +49,6 @@
     <p style="text-align: left;">ルやチカーノ、そしてカバーアップに至るまで、</p>
     <p style="text-align: left;">オールジャンルのタトゥーに対応しておりま</p>
     <p style="text-align: left;">す。</p>
-    <p style="text-align: left;">&nbsp;</p>
-    <p style="text-align: left;">現在スタジオ出店準備中のため、タトゥーのご</p>
-    <p style="text-align: left;">予約は受け付けておりません。</p>
-    <p style="text-align: left;">詳細は決まり次第、随時公開いたします。</p>
   </div>
   <hr>
 
