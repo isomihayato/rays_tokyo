@@ -32,7 +32,9 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%
 					<?php foreach($nav_artists as $user): ?>
 						<li><a href="/show_artist/<?php echo $user->id ?>" class="sub_item"><?php echo strtoupper($user->login_id) ?></a></li>
 					<?php endforeach; ?>
-          <li class="mgt20"><a href="/contact">&#9632;&nbsp;CONTACT</a></li>
+          <li><a href="/aboutus">&#9632;&nbsp;ABOUT US</a></li>
+          <li><a href="/blogs">Blog</a></li>
+          <li><a href="/contact">&#9632;&nbsp;CONTACT</a></li>
         	<li><a href="https://raysco.shop/" target="_blank" rel="nofollow noreferrer">&#9632;&nbsp;ONLINE STORE&emsp;オンラインストア</a></li>
         </ul>
     </div>
