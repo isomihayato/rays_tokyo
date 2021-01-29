@@ -98,8 +98,8 @@ class PagesController extends Controller
     foreach ($categories as $category) {
       $category->setRelation('articles', $category->articles()->where([['displayed_in','like',"%tokyo%"]])->paginate(10,['*'],$category->id));
     }
-    $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->paginate(5);
-    $logs = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
+    $articles = Article::where([['title','!=','recruit'],['displayed_in','like',"%tokyo%"],['title','!=','sdcp']])->orderBy('id', 'desc')->paginate(5);
+    $logs = Article::where([['title','!=','recruit'],['displayed_in','like',"%tokyo%"],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
         return $row->created_at->format('Y-m');
     })->map(function ($day) {
         return count($day);
