@@ -93,63 +93,95 @@ class PagesController extends Controller
   }
   public function blogs(Request $request)
   {
+    $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['login_id','!=','white'],['login_id','!=','other']])->get();
     $categories = Category::where([['title','!=','sdcp'],['title','!=','recruit']])->get();
     foreach ($categories as $category) {
-      $category->setRelation('articles', $category->articles()->paginate(10,['*'],$category->id));
+      $category->setRelation('articles', $category->articles()->where([['displayed_in','like',"%tokyo%"]])->paginate(10,['*'],$category->id));
     }
-    $logs = Article::whereYear('created_at', 2020)->orderBy('created_at')->get()->groupBy(function ($row) {
+    $articles = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->paginate(5);
+    $logs = Article::where([['title','!=','recruit'],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
         return $row->created_at->format('Y-m');
     })->map(function ($day) {
         return count($day);
     });
 
-    if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-            || (strpos($request->header('User-Agent'), 'iPod') !== false)
-            || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-              return view('pages.blogs',[
-                'categories' => $categories,
-                'logs'  =>  $logs,
-              ]);
-        } else {
-            return 'pc';
-        }
+    return view('pages.blogs',[
+      'categories' => $categories,
+      'articles' => $articles,
+      'users' => $users,
+      'logs' => $logs
+    ]);
   }
-  public function blogs_month(Request $request)
+  public function blogs_month($current)
   {
-    $current = new DateTime($request->current);
-    $articles = Article::whereYear('created_at', $current->format('Y'))->whereMonth('created_at', $current->format('m'))
-    ->where(
-      [
-        ['category_id','!=',Category::where('title','recruit')->get()[0]->id],
-        ['category_id','!=',Category::where('title','sdcp')->get()[0]->id]
-      ])->orderBy('created_at')->get();
+    $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['login_id','!=','white'],['login_id','!=','other']])->get();
+    $categories = Category::where([['title','!=','sdcp'],['title','!=','recruit']])->get();
+    foreach ($categories as $category) {
+      $category->setRelation('articles', $category->articles()->where([['displayed_in','like',"%tokyo%"]])->paginate(10,['*'],$category->id));
+    }
+    $articles = Article::where([['displayed_in','like',"%tokyo%"],['title','!=','recruit'],['title','!=','sdcp']])->whereBetween('created_at',[
+      (new DateTime($current))->modify("first day of this month")->format('Y-m-d'),
+      (new DateTime($current))->modify("last day of this month")->format('Y-m-d'),
+      ])->orderBy('id', 'desc')->paginate(5);
+    $logs = Article::where([['displayed_in','like',"%tokyo%"],['title','!=','recruit'],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
+        return $row->created_at->format('Y-m');
+    })->map(function ($day) {
+        return count($day);
+    });
 
-      if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-              || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-                return view('pages.blogs_month',[
-                  'current' => $current,
-                  'articles' => $articles,
-                ]);
-          } else {
-              return 'pc';
-          }
+    return view('pages.blogs',[
+      'categories' => $categories,
+      'articles' => $articles,
+      'users' => $users,
+      'logs' => $logs
+    ]);
+  }
+
+  public function blogs_category($id)
+  {
+    $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['login_id','!=','white'],['login_id','!=','other']])->get();
+    $categories = Category::where([['title','!=','sdcp'],['title','!=','recruit']])->get();
+    foreach ($categories as $category) {
+      $category->setRelation('articles', $category->articles()->where([['displayed_in','like',"%tokyo%"]])->paginate(10,['*'],$category->id));
+    }
+    $category = Category::where('id',$id)->get();
+    $articles = Article::where([['category_id',$id],['displayed_in','like',"%tokyo%"],['title','!=','recruit'],['title','!=','sdcp']])->orderBy('id', 'desc')->paginate(25);
+    $logs = Article::where([['displayed_in','like',"%tokyo%"],['title','!=','recruit'],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
+        return $row->created_at->format('Y-m');
+    })->map(function ($day) {
+        return count($day);
+    });
+    return view('pages.blogs_category',[
+      'categories' => $categories,
+      'this_category' => $category,
+      'articles' => $articles,
+      'users' => $users,
+      'logs' => $logs
+    ]);
+  }
+  public function blog($id)
+  {
+    $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['role','!=',3]])->get();
+    $categories = Category::where([['title','!=','sdcp'],['title','!=','recruit']])->get();
+    foreach ($categories as $category) {
+      $category->setRelation('articles', $category->articles()->where([['displayed_in','like',"%tokyo%"]])->paginate(10,['*'],$category->id));
+    }
+    $article = Article::findOrFail($id);
+    $logs = Article::where([['displayed_in','like',"%tokyo%"],['title','!=','recruit'],['title','!=','sdcp']])->orderBy('created_at')->get()->groupBy(function ($row) {
+        return $row->created_at->format('Y-m');
+    })->map(function ($day) {
+        return count($day);
+    });
+
+    return view('pages.blog',[
+      'categories' => $categories,
+      'article' => $article,
+      'users' => $users,
+      'logs' => $logs
+    ]);
   }
   public function contact()
   {
     return view('pages.contact');
-  }
-  public function blog(Request $request)
-  {
-    $article = Article::findOrFail($request->article);
-
-    if ((strpos($request->header('User-Agent'), 'iPhone') !== false)
-            || (strpos($request->header('User-Agent'), 'iPod') !== false)
-            || (strpos($request->header('User-Agent'), 'Android') !== false)) {
-              return view('pages.blog',[
-                'article' => $article,
-              ]);
-        } else {
-            return 'pc';
-        }
   }
 }

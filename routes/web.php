@@ -20,8 +20,9 @@ Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
 Route::get('/artists','PagesController@artists')->name('pages.artists');
 Route::get('/show_artist/{id}','PagesController@show_artist')->name('pages.show_artist');
 Route::get('/blogs','PagesController@blogs')->name('pages.blogs');
-Route::get('/blogs_month','PagesController@blogs_month')->name('pages.blogs_month');
-Route::get('/blog','PagesController@blog')->name('pages.blog');
+Route::get('/blogs_category/{id}','PagesController@blogs_category')->name('pages.blogs_category');
+Route::get('/blogs_month/{current}','PagesController@blogs_month')->name('pages.blogs_month');
+Route::get('/blog/{id}','PagesController@blog')->name('pages.blog');
 Route::get('/contact','PagesController@contact')->name('pages.contact');
 Route::get('/recruit','PagesController@recruit')->name('pages.recruit');
 
