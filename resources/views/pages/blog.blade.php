@@ -99,7 +99,7 @@ h2.fc-toolbar-title{
 <div class="container" style="max-width: 90vw;margin:0 auto;">
   <div class="row">
     <div class="col-sm-8 blog_body">
-      <h2 class="blog__title">ブログ記事一覧</h2>
+      <h2 class="blog__title">{{$article->title}}</h2>
       <dl class="blogdata">
         <dt>投稿日 :</dt>{{$article->release_at}}<dd></dd>
         <dt>カテゴリ :</dt><dd><a href="/blogs_category/{{$article->category->id}}">{{$article->category->title}}</a></dd>
