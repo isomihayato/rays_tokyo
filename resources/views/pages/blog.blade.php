@@ -1,5 +1,5 @@
 <?php
-$title = "ブログ記事一覧";
+$title = $article->title;
 ?>
 <?php
 echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";
