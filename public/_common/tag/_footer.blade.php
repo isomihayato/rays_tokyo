@@ -54,7 +54,7 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%kyoto%
 </ul>
 </div>
 <div class="for_sp mb-5" style="height: 50px;"></div>
-<div class="area_copy"><small><span class="for_pc">京都のタトゥー（tattoo）スタジオレイズ・刺青&emsp;</span>&copy;TATTOO STUDIO Ray's All Rights Reserved.</small></div>
+<div class="area_copy"><small><span class="for_pc">東京のタトゥー（tattoo）スタジオレイズ・刺青&emsp;</span>&copy;TATTOO STUDIO Ray's All Rights Reserved.</small></div>
 </footer>
 <div id="gMenu" class="for_sp uk-offcanvas">
     <div id="gMenuInner" class="uk-offcanvas-bar clearfix">
