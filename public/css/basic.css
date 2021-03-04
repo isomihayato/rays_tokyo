@@ -1,0 +1,38 @@
+.body img{
+  display: block;
+  margin: 0 auto;
+}
+ul.blogs{
+  padding: 0;
+  word-break: break-all;
+  border: solid 1px #eee;
+  padding: 5px;
+  height: 650px;
+  overflow: scroll;
+}
+ul.blogs li{
+  display: inline-flex;
+  height: 80px;
+  list-style: none;
+}
+ul.blogs img{
+  /* float: left; */
+  width: 80px;
+  height: 80px;
+}
+ul.blogs .wrapper{
+  display: inline-block;
+  width: 100%;
+}
+ul.blogs .blogs_created_at{
+  font-size: .8rem;
+  margin-left: 10px;
+  text-align: left;
+}
+ul.blogs .blogs_title{
+  margin-left: 10px;
+  width: max-content;
+}
+ul.blogs .blogs_body{
+  margin-left: 10px;
+}

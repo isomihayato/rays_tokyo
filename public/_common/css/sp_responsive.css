@@ -21,7 +21,7 @@ div.inst a { display:inline-block; padding:6px 0 6px 37px; margin:40px 0 0; back
 .c_txt a { text-decoration:underline; color:rgb(26,26,26); }
 .c_txt a:visited { text-decoration:underline; color:rgb(26,26,26); }
 
-.impact { display:block; font-size:40px; text-align:center; padding:10px; }
+.impact { display:block;font-size: 35px;font-weight: bold; text-align:center; padding:10px; }
 h2.main_tit { width:100%; background-color:rgb(204,204,204); text-align:center; margin:30px auto; padding:10px 0px; font-size:20px; }
 h2.main_tit span { display:block; width:auto; margin:0px; padding:0px 10px; }
 h2.main_tit span img { vertical-align:middle; }
@@ -78,7 +78,7 @@ ul.common_hdr_nav { width:100%; height:30px; margin:0px auto; padding-top:10px; 
 ul.common_hdr_nav a li { display:inline-block; color:rgb(26,26,26); text-decoration:none; width:96px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:12px 10px; background-repeat:no-repeat; background-position:75px 12px; font-size:14px; text-align:center; }
 ul.common_hdr_nav a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
-ul.common_hdr_nav_02{ width:100%; height:30px; margin:0px auto; padding-top:40px; text-align:center; }
+ul.common_hdr_nav_02{ width:100%; height:30px; margin:0px auto; text-align:center; }
 ul.common_hdr_nav_02 a li { display:inline-block; color:rgb(26,26,26); text-decoration:none; width: 152px; margin:12px 5px 0px 5px; padding:8px 0px; background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:12px 10px; background-repeat:no-repeat; background-position:125px 12px; font-size:14px; text-align:center; }
 ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
@@ -106,7 +106,15 @@ ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 /************** フッタ ****************/
 #area_footer { width:100%; margin-top:40px; padding-top:6px; background:url(/_common/image/icons/tile_01.png); background-position:top left; background-size:6px; background-repeat:repeat-x; }
-.ftr_logo {  width:100%; min-height:150px; margin-top:20px; background-image:url(/_common/image/top/emb_04.jpg); background-size:250px 150px; background-repeat:no-repeat; background-position:center center; }
+.ftr_logo {
+  width: 100%;
+  min-height: 45vh;
+  margin-top: 20px;
+  background-image: url(/images/tmp/tokyo_emb.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 .wrap_footer { width:100%; margin:0px 0px; padding:0px; }
 .wrap_footer ul {  }
@@ -195,7 +203,7 @@ ul.area_top_bnr li img { width:100%; max-width:640px; margin-bottom:2px; }
 
 ul.area_top_artist { width:100%; margin:20px auto; }
 ul.area_top_artist li {  margin:20px 0px; padding:0; }
-.pic_artist { width:100%; height:456px; background:url(/_common/image/artist/daniel/sw_06.jpg) no-repeat center; background-size:295px auto; margin:0; padding:0; }
+.pic_artist { width:100%; height:456px; background:url(/_common/image/artist/daniel/home.jpg) no-repeat center; background-size:295px auto; margin:0; padding:0; }
 
 .txt_rays { width:100%; height:82px; background:url(/_common/image/top/txt_07.png) no-repeat center; background-size:280px auto; margin:70px auto 0 auto; padding:0; }
 
@@ -221,7 +229,7 @@ ul.area_sns_bnr li img { width:100%; }
 .area_map iframe { width:310px; height:360px; }
 
 ul.area_map_btn { width:230px; margin:20px auto 40px auto; }
-ul.area_map_btn li { width:230px; height:26px;  padding:10px 0px;  background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:10px 9px; background-repeat:no-repeat; background-position:208px 18px; margin:0px 10px; text-align:center; font-size:20px; }
+ul.area_map_btn li { width:230px; height:50px;  padding:10px 0px;  background-color:rgb(204,204,204); background-image:url(/_common/image/arrow_01.png); background-size:10px 9px; background-repeat:no-repeat; background-position:208px 18px; margin:0px 10px; text-align:center; font-size:20px; }
 ul.area_map_btn a { width:230px; display:block; color: rgb(26,26,26); text-decoration:none;  }
 ul.area_map_btn a:visited { color:rgb(26,26,26); text-decoration:none; }
 
@@ -255,40 +263,24 @@ ul.area_map_btn a:visited { color:rgb(26,26,26); text-decoration:none; }
 
 .area_collabo {  padding-top:20px; background:url(/_common/image/icons/tile_01.png); background-position:top left; background-size:6px; background-repeat:repeat-x; }
 
-/************** SWIPE ****************/
-#area_swiper { width:100%; margin:20px auto; }
-.swiper-container {width:100%; height: 100%; margin:0px auto; }
-.swiper-slide { text-align:center; }
-.swiper-slide h3 { font-size:30px; font-weight:normal; text-align:center; }
-.swiper-slide h3 span { display:block; font-size:18px; font-weight:normal; }
-.swiper-slide img {  position:relative; z-index:-10 !important; width:66%; max-width:350px; }
-.swiper-slide img.side_pic { margin-top:110px; }
-.swiper-slide { margin-bottom:30px; }
-.swiper-slide div { margin:20px auto; }
-
 .area_swiper_cover { width:100%; margin:20px auto; }
 .area_swiper_cover img { width:240px; margin-bottom:20px; }
 
-#area_swiper_2nd { width:100%; margin:0px auto; }
-#area_swiper_2nd .swiper-container {width:100%; height: 100%; margin:0px auto; }
-#area_swiper_2nd .swiper-slide { text-align:center; }
-#area_swiper_2nd .swiper-slide h3 { font-size:30px; font-weight:normal; text-align:center; }
-#area_swiper_2nd .swiper-slide h3 span { display:block; font-size:18px; font-weight:normal; }
-#area_swiper_2nd .swiper-slide { margin-bottom:30px; }
-#area_swiper_2nd .swiper-slide p { width:300px; margin:10px auto 20px auto;}
-#area_swiper_2nd .swiper-slide img {  position:relative; z-index:-1 !important; }
+.swiper-container {
+  height: 35%;
+}
+.swiper-slide img{
+  width: 98%;
+}
 
 .swiper-button-next, .swiper-button-prev { top:100px !important; width:14px !important; height:32px !important; margin-top:0 !important; background-size:14px 32px !important; }
 .swiper-button-next { right:25px !important; }
 .swiper-button-prev { left:25px !important; }
 
 .slide_studio_pic {  }
-.slide_studio_pic .swiper-slide img { width:100% !important; }
 
 .portfolio { }
 .portfolio .swiper-container { width:100%; }
-.portfolio .swiper-container .swiper-slide { width:100%; margin-bottom:40px; }
-.portfolio .swiper-container .swiper-slide img { width:100% !important; }
 .portfolio .swiper-button-next, .portfolio .swiper-button-prev { top:46% !important; width:14px !important; height:32px !important; margin-top:0 !important; background-size:14px 32px !important; }
 
 /************** price ****************/
