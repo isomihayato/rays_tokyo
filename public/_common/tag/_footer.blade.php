@@ -1,6 +1,6 @@
 <?php
-$nav_users = App\User::where([['existence',true],['belongs_to','like',"%kyoto%"],['role','!=',1],['role','!=',3]])->get();
-$nav_artists = App\User::where([['existence',true],['belongs_to','like',"%kyoto%"],['role','!=',1],['role','!=',3],['login_id','!=','white'],['login_id','!=','other']])->get();
+$nav_users = App\User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['role','!=',3]])->get();
+$nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=',1],['role','!=',3],['login_id','!=','white'],['login_id','!=','other']])->get();
 ?>
 
 <footer>
