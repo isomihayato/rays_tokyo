@@ -48,8 +48,8 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%
 </ul>
 
 <ul class="common_hdr_nav">
-	<a href="/zh"><li>中文</li></a>
-	<a href="/en"><li>English</li></a>
+	<a href="/"><li>中文</li></a>
+	<a href="/"><li>English</li></a>
 	<a href="/#pickup_05"><li>Access</li></a>
 </ul>
 </div>
