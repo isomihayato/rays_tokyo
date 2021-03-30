@@ -35,7 +35,7 @@ $page_title = "Price ";
 </p>
 <div style="margin:4.5vh 0;display: inline-block;"></div>
 <div class="center">
-  <a href="https://line.me/R/ti/p/gpM4XiuiAe" target="_blank" rel="nofollow noreferrer"><div class="info_line"></div></a>
+  <a href="https://lin.ee/6yIXkH5" target="_blank" rel="nofollow noreferrer"><div class="info_line"></div></a>
 </div>
 <p class="c_txt">
   タトゥーのご予約はLINE追加時に表示される <br>
