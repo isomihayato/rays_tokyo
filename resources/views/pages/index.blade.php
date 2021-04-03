@@ -59,7 +59,12 @@
   include("./_common/tag/_navi_for_pc.blade.php");
 ?>
 <header>
-    <div class="for_sp menu_reset"><img src="/_common/image/btn_menu.png" data-uk-offcanvas="{target:'#gMenu'}" alt="MENU" width="50" class="for_sp"></div>
+    <div class="for_sp menu_reset">
+      <img
+      src="/_common/image/btn_menu.png"
+      data-uk-offcanvas="{target:'#gMenu'}"
+      alt="MENU" width="50" class="for_sp">
+    </div>
 </header>
 <section class="content">
   <div class="body mt-5">
@@ -92,8 +97,10 @@
         <div class="top_bg_02">
           <p class="c_txt">
             『タトゥーは、一生に一度の大切なもの』です。
-            <br>お客様が納得いくまで何度でもデザインいたします。過去に自分の納得のいかない施術を受けた経験があり、皆様には同じ思いをしてもらいたくない。
-            <br>お客様1人1人のニーズを大切にし、悔いの無い一生物の作品を仕上げることを信念に、強い決意を持って施術しております。
+            <br>お客様が納得いくまで何度でもデザインいたします。
+            過去に自分の納得のいかない施術を受けた経験があり、皆様には同じ思いをしてもらいたくない。
+            <br>お客様1人1人のニーズを大切にし、悔いの無い一生物の作品を仕上げることを信念に、
+            強い決意を持って施術しております。
           </p>
           <div class="btn_arw_01"><a href="/artists">ARTIST 紹介</a></div>
         </div>
@@ -148,7 +155,8 @@
 
     <div class="article_block">
       <p class="c_txt">
-        白を基調とした店内は、明るく清潔感があり天井も高く開放的な雰囲気で徹底した衛生管理の元、皆様にタトゥー施術をリラックスして楽しんでいただけるようにしております。
+        白を基調とした店内は、明るく清潔感があり天井も高く開放的な雰囲気で徹底した衛生管理の元、
+        皆様にタトゥー施術をリラックスして楽しんでいただけるようにしております。
       </p>
     </div>
 
@@ -156,9 +164,10 @@
 
       <div class="inner">
         <h2>instagram</h2>
-        <div id="insta-widget" class="iswg-base" data-username="tattoostudiorays" data-display-image-count="9" data-wrapper-width></div>
+        <div id="insta-widget" class="iswg-base"
+        data-username="tattoostudiorays" data-display-image-count="9" data-wrapper-width>
+        </div>
         <script src="https://cdn.jsdelivr.net/gh/akinov/insta_window@v1.0/dist/main.js"></script>
-
       </div>
 
     	<div class="inner">

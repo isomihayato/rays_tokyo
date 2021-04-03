@@ -647,7 +647,7 @@ h2.faq:hover { color:rgb(190,190,190); cursor:pointer; }
 h2.faq span.arw_open { text-indent:-35px; display:block; width:auto; max-width:800px; min-height:30px; margin:0px auto; padding:0 20px 0 35px; background-image:url(/_common/image/arrow_open.png); background-size:13px 15px; background-repeat:no-repeat;background-position:center right; }
 h2.faq span { display:block; }
 
-.block_faq { width:740px; height:100%; margin:0px auto; padding:20px 30px; text-align:left; }
+.block_faq { width:610px; height:100%; margin:0px auto; text-align:left; }
 .block_faq h3 { text-align:center; padding:30px 20px; font-size:20px; }
 .block_faq table { max-width:100%; width:auto; min-width:380px; margin:0 auto 30px auto; font-size:16px; border:solid 1px rgb(220,220,220); border-collapse:collapse; white-space: nowrap; }
 .block_faq table th { width:180px; background:rgb(248,248,250); padding:10px; font-weight:normal; border:solid 1px rgb(220,220,220); }

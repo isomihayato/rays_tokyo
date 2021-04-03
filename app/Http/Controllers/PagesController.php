@@ -52,6 +52,10 @@ class PagesController extends Controller
   {
     return view('pages.price');
   }
+  public function faq()
+  {
+    return view('pages.faq');
+  }
   public function gallery(Request $request)
   {
     $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3']])->get();

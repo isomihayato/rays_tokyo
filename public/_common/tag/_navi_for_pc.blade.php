@@ -12,7 +12,7 @@
 						<!-- <li><a href="/precaution_sanitation"><span class="sub_02_01" title="諸注意・衛生面"></span></a></li> -->
 						<li><a href="/price"><span class="sub_02_02" title="施術料金"></span></a></li>
 						<!-- <li><a href="/flow"><span class="sub_02_03" title="ご予約の流れ"></span></a></li> -->
-						<!-- <li><a href="/faq"><span class="sub_02_04" title="Q&nbsp;&amp;&nbsp;A"></span></a></li> -->
+						<li><a href="/faq"><span class="sub_02_04" title="Q&nbsp;&amp;&nbsp;A"></span></a></li>
 					</ul>
 				</li>
 				<li style="margin:0 40px;margin-top:16px;"> <p style="margin:0;">Special Tattoo</p> <span style="display: block;font-size: 13px;text-align: center;">coming soon</span></li>

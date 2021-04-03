@@ -21,13 +21,14 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%
 <ul class="for_pc ftr_navi">
 	<li>&#9632;&nbsp;SYSTEM</li>
 	<li><a href="/price">・Price</a></li>
+	<li><a href="/price">・Q&nbsp;&amp;&nbsp;A</a></li>
 	<li class="mgt20"><a href="/artists">&#9632;&nbsp;ARTIST</a></li>
 	<?php foreach($nav_artists as $user): ?>
 		<li><a href="/show_artist/<?php echo $user->id ?>">・<?php echo strtoupper($user->login_id) ?></a></li>
 	<?php endforeach; ?>
 </ul>
 <ul class="for_pc ftr_navi">
-	<li class="mgt20"><a href="/aboutus">&#9632;&nbsp;ABOUT US</a></li>
+	<li><a href="/aboutus">&#9632;&nbsp;ABOUT US</a></li>
 	<li><a href="/blogs">・Blog</a></li>
 </ul>
 <ul class="for_pc ftr_navi">
@@ -67,6 +68,7 @@ $nav_artists = App\User::where([['existence',true],['belongs_to','like',"%tokyo%
 					<?php endforeach; ?>
         	<li><a class="main_item">&#9632;&nbsp;SYSTEM&emsp;システム</a></li>
         	<li><a href="/price" class="sub_item">Price&emsp;施術料金</a></li>
+					<li><a href="/faq" class="sub_item">Q&nbsp;&amp;&nbsp;A&emsp;よくあるご質問</a></li>
         	<li><a href="/artists" class="main_item">&#9632;&nbsp;ARTIST&emsp;アーティスト</a></li>
 					<?php foreach($nav_artists as $user): ?>
 						<li><a href="/show_artist/<?php echo $user->id ?>" class="sub_item"><?php echo strtoupper($user->login_id) ?></a></li>

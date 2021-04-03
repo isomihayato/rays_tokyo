@@ -16,6 +16,7 @@ Route::get('/index','PagesController@index')->name('pages.index');
 Route::get('/guide','PagesController@guide')->name('pages.guide');
 Route::get('/terms','PagesController@terms')->name('pages.terms');
 Route::get('/price','PagesController@price')->name('pages.price');
+Route::get('/faq','PagesController@faq')->name('pages.faq');
 Route::get('/gallery','PagesController@gallery')->name('pages.gallery');
 Route::get('/artists','PagesController@artists')->name('pages.artists');
 Route::get('/show_artist/{id}','PagesController@show_artist')->name('pages.show_artist');
