@@ -60,7 +60,7 @@ class PagesController extends Controller
   {
     $users = User::where([['existence',true],['belongs_to','like',"%tokyo%"],['role','!=','1'],['role','!=','3']])->get();
     foreach ($users as $user) {
-      $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%tokyo%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)) );
+      $user->setRelation('tattoos', $user->tattoos()->where([['displayed_in','like',"%tokyo%"]])->orderBy('id','desc')->paginate(8,['*'],strtolower($user->login_id)));
     }
     $url = url()->full();
     if (strpos($url,'=') != 0) {
