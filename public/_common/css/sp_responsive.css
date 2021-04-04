@@ -84,9 +84,10 @@ ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 .back_home_logo {
     width: 45%;
-    padding: 30px;
+    padding: 100px;
+    padding-bottom: 0px;
     background-image: url(/images/tmp/tokyo_emb.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     /* margin-top: 50px; */
