@@ -11,7 +11,7 @@ use App\Tattoo;
 use App\User;
 use Storage;
 use DateTime;
-
+use InterventionImage;
 
 class TattoosController extends Controller
 {
@@ -196,7 +196,11 @@ class TattoosController extends Controller
             $file = base64_decode($fileData);
             $fileName = Str::random(150).'.png';
             $path = 'upload/'.$fileName;
-            Storage::disk('s3')->put($path, $file, 'public');
+            $image = InterventionImage::make($file)
+                      ->resize(300, null, function ($constraint) {
+                          $constraint->aspectRatio();
+                      });
+            Storage::disk('s3')->put($path, (string) $image->encode(), 'public');
 
             return Storage::disk('s3')->url($path);
 
