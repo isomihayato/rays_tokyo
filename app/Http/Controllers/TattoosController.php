@@ -197,7 +197,7 @@ class TattoosController extends Controller
             $fileName = Str::random(150).'.png';
             $path = 'upload/'.$fileName;
             $image = InterventionImage::make($file)
-                      ->resize(300, null, function ($constraint) {
+                      ->resize(400, null, function ($constraint) {
                           $constraint->aspectRatio();
                       });
             Storage::disk('s3')->put($path, (string) $image->encode(), 'public');

@@ -98,9 +98,9 @@ ul.common_hdr_nav_02 a li:visited { color:rgb(26,26,26); text-decoration:none; }
 
 
 /***** 固定ボタン *****/
-.menu_reset {  position:relative; z-index:999 !important; overflow:hidden; width:98%; margin-top:10px; margin-right:10px; height:40px; position: fixed; top:0; }
+.menu_reset {  position:fixed; z-index:999 !important; overflow:hidden; display: block;left: 87%;margin-top:10px; margin-right:10px; height:40px; top:0; }
 .menu_reset:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
-.menu_reset img { display:block; float:right; width:34px; opacity:0.8; }
+.menu_reset img { display:block; float:right; width:34px; opacity:0.8; margin: 10px 10px 0 0;}
 
 .page_top_fix { width:98%; margin:0px 0px; height:70px; position: fixed; bottom:0; text-align:right; }
 .page_top_fix img { position:relative; z-index:999 !important; width:50px; height:50px; }

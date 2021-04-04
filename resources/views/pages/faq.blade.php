@@ -298,7 +298,7 @@ $page_title = "Q&A ";
           </div>
           <div class="close"><p class="arw_close_faq"></p></div>
         </dd>
-        <dt class="accordion"><h2 class="faq">Q: スタジオの場所と最寄駅はどこですか？</h2>
+        <dt class="accordion"><h2 class="faq"><span class="arw_open">Q: スタジオの場所と最寄駅はどこですか？</span></h2>
         </dt>
         <dd>
           <div class="block_faq">
