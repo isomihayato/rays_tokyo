@@ -44,12 +44,12 @@ $page_title = "Price ";
 					<td>&yen;10,000〜</td>
 				</tr>
 				<tr>
-					<th>タバコ<br class="for_sp">サイズ（5×9cm）</th>
+					<th>タバコ<br class="for_sp">サイズ</th>
 					<td>&yen;33,000〜</td>
 					<td>&yen;20,000〜</td>
 				</tr>
 				<tr>
-					<th>スマホ<br class="for_sp">サイズ（7×13cm）</th>
+					<th>スマホ<br class="for_sp">サイズ（5×9cm）</th>
 					<td>&yen;49,500〜</td>
 					<td>&yen;20,000〜</td>
 				</tr>
@@ -80,12 +80,12 @@ $page_title = "Price ";
 					<td>&yen;10,000〜</td>
 				</tr>
 				<tr>
-					<th>タバコ<br class="for_sp">サイズ（5×9cm）</th>
+					<th>タバコ<br class="for_sp">サイズ</th>
 					<td>&yen;44,000〜</td>
 					<td>&yen;20,000〜</td>
 				</tr>
 				<tr>
-					<th>スマホ<br class="for_sp">サイズ（7×13cm）</th>
+					<th>スマホ<br class="for_sp">サイズ（5×9cm）</th>
 					<td>&yen;60,500〜</td>
 					<td>&yen;30,000〜</td>
 				</tr>
@@ -102,8 +102,6 @@ $page_title = "Price ";
 			</table>
 
 			<h4 class="center">Daniel Ray（完全予約制）</h4>
-
-
 			<table>
 				<tr>
 					<th>サイズ</th>
@@ -118,13 +116,13 @@ $page_title = "Price ";
 					<td>&yen;20,000〜</td>
 				</tr>
 				<tr>
-					<th>タバコ<br class="for_sp">サイズ（5×9cm）</th>
+					<th>タバコ<br class="for_sp">サイズ</th>
 					<td>&yen;66,000〜</td>
 					<td>&yen;66,000〜</td>
 					<td>&yen;20,000〜</td>
 				</tr>
 				<tr>
-					<th>スマホ<br class="for_sp">サイズ（7×13cm）</th>
+					<th>スマホ<br class="for_sp">サイズ（5×9cm）</th>
 					<td>&yen;82,000〜</td>
 					<td>&yen;88,000〜</td>
 					<td>&yen;30,000〜</td>
