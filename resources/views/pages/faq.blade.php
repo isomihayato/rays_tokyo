@@ -316,6 +316,14 @@ $page_title = "Q&A ";
           </div>
           <div class="close"><p class="arw_close_faq"></p></div>
         </dd>
+        <dt class="accordion"><h2 class="faq"><span class="arw_open">Q、タトゥーを入れてもMRIは受けれますか？</span></h2></dt>
+        <dd>
+          <div class="block_faq">
+            <p class="faq_heed">A、はい、基本的には受けれます。<br>詳しくはスタッフが実際に体験しておりますので、下記をご参照ください。</p>
+            <a href="/blog/80">タトゥーありの僕がMRIを受けてみた結果</a>
+          </div>
+          <div class="close"><p class="arw_close_faq"></p></div>
+        </dd>
       </dl>
     </div>
     <div class="mgt80"></div>
