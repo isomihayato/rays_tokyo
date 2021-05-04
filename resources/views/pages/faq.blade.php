@@ -320,7 +320,8 @@ $page_title = "Q&A ";
         <dd>
           <div class="block_faq">
             <p class="faq_heed">A、はい、基本的には受けれます。<br>詳しくはスタッフが実際に体験しておりますので、下記をご参照ください。</p>
-            <a href="/blog/80">タトゥーありの僕がMRIを受けてみた結果</a>
+            <br><br>
+            <a href="/blog/80">`タトゥーありの僕がMRIを受けてみた結果`</a>
           </div>
           <div class="close"><p class="arw_close_faq"></p></div>
         </dd>
